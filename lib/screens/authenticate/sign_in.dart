@@ -1,7 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:Demen_Buster/services/auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 
 class SignIn extends StatefulWidget {
@@ -10,7 +8,6 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  
   final AuthServices _auth = AuthServices();
 
   @override
@@ -19,20 +16,21 @@ class _SignInState extends State<SignIn> {
       backgroundColor: Colors.amber[200],
       appBar: AppBar(
         backgroundColor: Colors.amber[500],
-        elevation: 0,
+        elevation: 10,
         title: Text("sign in to The Game"),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
         child: RaisedButton(
-          child: Text("sign in anonomously"),
+          child: Text("Sign in anonomously"),
           onPressed: () async {
             dynamic result = await _auth.signInAnon();
             if (result == null) {
               print("Cannot signIN");
-            } else {
+            }
+            else {
               print("signed in");
-              print(result);
+              print(result.uid);
             }
           },
         ),
