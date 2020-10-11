@@ -1,5 +1,6 @@
 import 'package:Demen_Buster/screens/home/home.dart';
 import 'package:flutter/material.dart';
+import 'authenticate/authenticate.dart';
 
 class Wrapper extends StatefulWidget {
   @override
@@ -11,6 +12,6 @@ class Wrapper extends StatefulWidget {
 class _WrapperState extends State<Wrapper> {
   @override
   Widget build(BuildContext context) {
-    return Home();
+    return Authenticate();
   }
 }
