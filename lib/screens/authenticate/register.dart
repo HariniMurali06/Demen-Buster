@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:Demen_Buster/services/auth.dart';
-import 'package:flutter/cupertino.dart';
 
-class SignIn extends StatefulWidget {
+class Register extends StatefulWidget {
   final Function toggle;
-  SignIn({this.toggle});
+  Register({this.toggle});
 
   @override
-  _SignInState createState() => _SignInState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
+class _RegisterState extends State<Register> {
   String email = "";
   String passWord = "";
+  String error = "";
+
   final AuthServices _auth = AuthServices();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +24,11 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
         backgroundColor: Colors.amber[500],
         elevation: 10,
-        title: Text("Sign In in to The Game"),
+        title: Text("Register in to The Game"),
         actions: [
           FlatButton.icon(
-            icon: Icon(Icons.person_add),
-            label: Text("Register"),
+            icon: Icon(Icons.input),
+            label: Text("Sign in"),
             onPressed: () {
               widget.toggle();
             },
@@ -36,12 +38,14 @@ class _SignInState extends State<SignIn> {
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
         child: Form(
+          key: _formKey,
           child: Column(
             children: [
               SizedBox(
                 height: 20,
               ),
               TextFormField(
+                validator: (val) => val.isEmpty ? "Enter an Email" : null,
                 onChanged: (val) {
                   setState(() => email = val);
                 },
@@ -50,6 +54,9 @@ class _SignInState extends State<SignIn> {
                 height: 20,
               ),
               TextFormField(
+                validator: (val) => val.length < 6
+                    ? "Enter a Password with minimum 6 Characters"
+                    : null,
                 obscureText: true,
                 onChanged: (val) {
                   setState(() => passWord = val);
@@ -58,12 +65,22 @@ class _SignInState extends State<SignIn> {
               SizedBox(height: 20),
               RaisedButton(
                 child: Text(
-                  "Sign In",
+                  "Sign Up",
                 ),
                 onPressed: () async {
-                  print(email);
-                  print(passWord);
+                  if (_formKey.currentState.validate()) {
+                    dynamic result =
+                        await _auth.regiterEmailPass(email, passWord);
+                    if (result == null) {
+                      setState(() => error = "Please enter a valid Email");
+                    }
+                  }
                 },
+              ),
+              SizedBox(height: 20),
+              Text(
+                error,
+                style: TextStyle(color: Colors.red, fontSize: 14),
               ),
             ],
           ),
