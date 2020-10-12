@@ -27,6 +27,17 @@ class AuthServices {
   }
 
   //sign in with email and pass
+  Future signinEmailPass(String email, String password) async {
+    try {
+      UserCredential result = await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      User user = result.user;
+      return _userfromfirebase(user);
+    } catch (e) {
+      print(e.toString);
+      return null;
+    }
+  }
 
   //register with email and password
   Future regiterEmailPass(String email, String password) async {
@@ -40,6 +51,7 @@ class AuthServices {
       return null;
     }
   }
+
 
   //sign out
   Future signOut() async {
