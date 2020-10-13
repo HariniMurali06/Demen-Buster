@@ -19,7 +19,7 @@ class Home extends StatelessWidget {
           ),
         ],
       ),
-      body: Text("Hi"),
+      body: Text("Hi hello"),
     );
   }
 }
