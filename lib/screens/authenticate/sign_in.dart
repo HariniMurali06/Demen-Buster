@@ -73,23 +73,26 @@ class _SignInState extends State<SignIn> {
                     ),
                     SizedBox(height: 20),
                     RaisedButton(
-                        child: Text(
-                          "Sign In",
-                        ),
-                        onPressed: () async {
-                          if (_formKey.currentState.validate()) {
-                            setState(() => loading = true);
-                            dynamic result =
-                                await _auth.signinEmailPass(email, passWord);
-                            if (result == null) {
-                              setState(() {
+                      child: Text(
+                        "Sign In",
+                      ),
+                      onPressed: () async {
+                        if (_formKey.currentState.validate()) {
+                          setState(() => loading = true);
+                          dynamic result =
+                              await _auth.signinEmailPass(email, passWord);
+                          if (result == null) {
+                            setState(
+                              () {
                                 error =
                                     "Please Check the login credentials and try again ";
                                 loading = false;
-                              });
-                            }
+                              },
+                            );
                           }
-                        }),
+                        }
+                      },
+                    ),
                     SizedBox(height: 30),
                     Text(
                       error,
@@ -99,15 +102,19 @@ class _SignInState extends State<SignIn> {
                     FlatButton.icon(
                       label: Text("Sign In anonomously"),
                       onPressed: () async {
-                        setState(() {
-                          loading = true;
-                        });
+                        setState(
+                          () {
+                            loading = true;
+                          },
+                        );
                         dynamic result = await _auth.signInAnon();
                         if (result == null) {
-                          setState(() {
-                            error = "Please try again";
-                            loading = false;
-                          });
+                          setState(
+                            () {
+                              error = "Please try again";
+                              loading = false;
+                            },
+                          );
                         }
                       },
                       icon: Icon(Icons.person_add_disabled),
