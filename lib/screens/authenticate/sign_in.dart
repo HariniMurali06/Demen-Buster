@@ -99,26 +99,6 @@ class _SignInState extends State<SignIn> {
                       style: TextStyle(color: Colors.red, fontSize: 14),
                     ),
                     SizedBox(height: 20),
-                    FlatButton.icon(
-                      label: Text("Sign In anonomously"),
-                      onPressed: () async {
-                        setState(
-                          () {
-                            loading = true;
-                          },
-                        );
-                        dynamic result = await _auth.signInAnon();
-                        if (result == null) {
-                          setState(
-                            () {
-                              error = "Please try again";
-                              loading = false;
-                            },
-                          );
-                        }
-                      },
-                      icon: Icon(Icons.person_add_disabled),
-                    ),
                   ],
                 ),
               ),

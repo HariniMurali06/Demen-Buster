@@ -1,4 +1,5 @@
 import 'package:Demen_Buster/model/userModel.dart';
+import 'package:Demen_Buster/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthServices {
@@ -45,13 +46,15 @@ class AuthServices {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       User user = result.user;
+
+      //create new document for the user
+      await DataBase(uid:user.uid).updateUserData(90, '13.10');
       return _userfromfirebase(user);
     } catch (e) {
       print(e.toString);
       return null;
     }
   }
-
 
   //sign out
   Future signOut() async {
