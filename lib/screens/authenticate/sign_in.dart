@@ -1,3 +1,4 @@
+import 'package:Demen_Buster/common/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:Demen_Buster/services/auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -45,6 +46,7 @@ class _SignInState extends State<SignIn> {
                 height: 20,
               ),
               TextFormField(
+                decoration:  textInputDecoration.copyWith(hintText: "Email"),
                 validator: (val) => val.isEmpty ? "Enter an Email" : null,
                 onChanged: (val) {
                   setState(() => email = val);
@@ -54,6 +56,7 @@ class _SignInState extends State<SignIn> {
                 height: 20,
               ),
               TextFormField(
+                decoration:  textInputDecoration.copyWith(hintText: "Password"),
                 validator: (val) => val.length < 6
                     ? "Enter a Password with minimum 6 Characters"
                     : null,
