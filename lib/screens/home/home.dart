@@ -30,10 +30,7 @@ class Home extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors:[
-                  Colors.yellow[500],
-                  Colors.yellow[400],
-                  Colors.yellow[300],
-                  Colors.yellow[200],
+                  Colors.white,
                   Colors.yellow[100],
                 ] )
             ),
