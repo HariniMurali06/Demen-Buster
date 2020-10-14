@@ -12,4 +12,8 @@ class DataBase {
       'score': score,
     });
   }
+
+  Stream<QuerySnapshot> get data {
+    return userData.snapshots();
+  }
 }

@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:Demen_Buster/screens/diagnose/diagnose.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:Demen_Buster/services/database.dart';
+import 'package:Demen_Buster/screens/carecentres/carecentres.dart';
 
 class Result extends StatefulWidget {
   final int simonLevel;
   final int celebrityPoints;
   final int patternPoints;
   final int total;
-  Result(
-      {this.simonLevel = 0, this.celebrityPoints = 0, this.patternPoints = 0,this.total=100});
+  Result({
+    this.simonLevel = 0,
+    this.celebrityPoints = 0,
+    this.patternPoints = 0,
+    this.total = 100,
+  });
+
   @override
   _ResultState createState() => _ResultState();
 }
@@ -25,24 +33,6 @@ class _ResultState extends State<Result> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                (widget.simonLevel +
-                            widget.patternPoints +
-                            widget.celebrityPoints >=
-                        13)
-                    ? Text(
-                        "Rest assured, you don't have Alzheimer's!",
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline5
-                            .copyWith(fontSize: 33, color: Colors.green),
-                      )
-                    : Text(
-                        "Unfortunately, you might have early onset Alzheimer's and you need to see a doctor point blank",
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline5
-                            .copyWith(fontSize: 25, color: Colors.red[300]),
-                      ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.07,
                 ),
@@ -122,6 +112,28 @@ class _ResultState extends State<Result> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.08,
                 ),
+                (widget.simonLevel +
+                            widget.patternPoints +
+                            widget.celebrityPoints >=
+                        13)
+                    ? Text(
+                        "Rest assured, you don't have Alzheimer's!",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline5
+                            .copyWith(fontSize: 33, color: Colors.green),
+                      )
+                    : Column(
+                        children: [
+                          Text(
+                            "Unfortunately, you might have early onset Alzheimer's and you need to see a doctor point blank",
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline5
+                                .copyWith(fontSize: 25, color: Colors.red[300]),
+                          ),
+                        ],
+                      ),
                 GestureDetector(
                   onTap: () {
                     Navigator.pushAndRemoveUntil(
@@ -137,16 +149,32 @@ class _ResultState extends State<Result> {
                       borderRadius: BorderRadius.circular(27.0),
                     ),
                     margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 25),
-                    child: ListTile(
-                      title: Text(
-                        "Back to Home Page ",
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText2
-                            .copyWith(color: Colors.white),
-                      ),
-                    ),
+                    child: widget.simonLevel +
+                                widget.patternPoints +
+                                widget.celebrityPoints <
+                            13
+                        ? FlatButton.icon(
+                            icon: Icon(Icons.local_hospital),
+                            label: Text("Hospitals"),
+                            onPressed: (() {
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Carecentres(),
+                                  ),
+                                  (Route<dynamic> route) => false);
+                            }),
+                          )
+                        : ListTile(
+                            title: Text(
+                              "Back to Home Page ",
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText2
+                                  .copyWith(color: Colors.white),
+                            ),
+                          ),
                   ),
                 ),
               ],
