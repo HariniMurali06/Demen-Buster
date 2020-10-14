@@ -56,6 +56,14 @@ class _CarecentresState extends State<Carecentres> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            icon: Icon(Icons.home),
+            onPressed: () {
+              Navigator.pushNamed(context, '/');
+            },
+          )
+        ],
         title: Text("Top CareCenters"),
         backgroundColor: Colors.green[500],
         shadowColor: Colors.green[200],

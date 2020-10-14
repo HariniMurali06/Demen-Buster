@@ -157,12 +157,7 @@ class _ResultState extends State<Result> {
                             icon: Icon(Icons.local_hospital),
                             label: Text("Hospitals"),
                             onPressed: (() {
-                              Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => Carecentres(),
-                                  ),
-                                  (Route<dynamic> route) => false);
+                              Navigator.pushNamed(context, '/carecentre');
                             }),
                           )
                         : ListTile(

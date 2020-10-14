@@ -1,3 +1,4 @@
+import 'package:Demen_Buster/screens/carecentres/carecentres.dart';
 import 'package:Demen_Buster/screens/wrapper.dart';
 import 'package:Demen_Buster/services/auth.dart';
 import 'package:flutter/material.dart';
@@ -19,13 +20,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
   @override
   Widget build(BuildContext context) {
     return StreamProvider<UserModel>.value(
       value: AuthServices().user,
       child: MaterialApp(
-        home: Wrapper(),
+        routes: {
+          '/': (context) => Wrapper(),
+          '/carecentre':(context)=>Carecentres(),
+        },
       ),
     );
   }
