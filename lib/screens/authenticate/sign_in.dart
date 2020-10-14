@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:Demen_Buster/services/auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:Demen_Buster/common/loading.dart';
+import 'package:Demen_Buster/common/rounded_button.dart';
+import 'package:Demen_Buster/common/rounded_input_field.dart';
+import 'package:Demen_Buster/common/rounded_password_field.dart';
+import 'package:Demen_Buster/common/already_have_an_account_acheck.dart';
+import 'package:Demen_Buster/screens/authenticate/register.dart';
 
 class SignIn extends StatefulWidget {
   final Function toggle;
@@ -22,27 +27,48 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-    return loading
-        ? Loading()
-        : Scaffold(
-            backgroundColor: Colors.amber[200],
-            appBar: AppBar(
-              backgroundColor: Colors.amber[500],
-              elevation: 10,
-              title: Text("Sign In in to The Game"),
-              actions: [
-                FlatButton.icon(
-                  icon: Icon(Icons.person_add),
-                  label: Text("Register"),
-                  onPressed: () {
-                    widget.toggle();
-                  },
+    Size size = MediaQuery.of(context).size;
+    var child;
+        return 
+            // ? Loading()
+             Scaffold(
+              body: Container(
+          height: size.height,
+          width: double.infinity,
+          child: Stack(
+            alignment: Alignment.center,
+            children: <Widget>[
+              Positioned( 
+                height: 870,
+                child: Image.asset(
+                  "assets/images/bg1.png",
+                  // width: size.width * 0.3,
                 ),
-              ],
-            ),
-            body: Container(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
-              child: Form(
+              ),
+            
+              SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  
+                  SizedBox(height: size.height * 0.03),
+                  Image.asset(
+                    "assets/images/logo.png",
+                  
+                  ),
+                  SizedBox(height: size.height * 0.03),
+                  
+                  // RoundedInputField(
+                  //   hintText: "Your Email",
+                  //   // validator: (val) => val.isEmpty ? "Enter an Email" : null,
+                  //   //         onChanged: (val) {
+                  //   //           setState(() => email = val);
+                  //   //         },
+                  // ),
+                  // RoundedPasswordField(
+                  //   onChanged: (value) {},
+                  // ),
+                  Form(
                 key: _formKey,
                 child: Column(
                   children: [
@@ -50,19 +76,41 @@ class _SignInState extends State<SignIn> {
                       height: 20,
                     ),
                     TextFormField(
-                      decoration:
-                          textInputDecoration.copyWith(hintText: "Email"),
+                      cursorColor: kPrimaryColor,
+                      
+                      decoration: InputDecoration(
+                        fillColor: Colors.white, filled:true,
+    
+                        icon: Icon(
+                          Icons.person,
+                          color: Colors.white,
+                        ),
+                        hintText: "Email ID",
+                        contentPadding: new EdgeInsets.symmetric(vertical: 18.0, horizontal: 20.0),
+                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(30.0)),
+                        
+                      ),
                       validator: (val) => val.isEmpty ? "Enter an Email" : null,
                       onChanged: (val) {
                         setState(() => email = val);
                       },
                     ),
-                    SizedBox(
+                    SizedBox( 
                       height: 20,
                     ),
                     TextFormField(
-                      decoration:
-                          textInputDecoration.copyWith(hintText: "Password"),
+                                     decoration: InputDecoration(
+                        fillColor: Colors.white, filled:true,
+    
+                        icon: Icon(
+                          Icons.lock,
+                          color: Colors.white,
+                        ),
+                        hintText: "Password",
+                        contentPadding: new EdgeInsets.symmetric(vertical: 18.0, horizontal: 20.0),
+                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(30.0)),
+                        
+                      ),
                       validator: (val) => val.length < 6
                           ? "Enter a Password with minimum 6 Characters"
                           : null,
@@ -71,12 +119,15 @@ class _SignInState extends State<SignIn> {
                         setState(() => passWord = val);
                       },
                     ),
-                    SizedBox(height: 20),
-                    RaisedButton(
-                      child: Text(
-                        "Sign In",
-                      ),
-                      onPressed: () async {
+                  ]
+                )
+                  ),
+                   SizedBox( 
+                      height: 20,
+                    ),
+                  RoundedButton(
+                    text: "LOGIN",
+                    press: () async {
                         if (_formKey.currentState.validate()) {
                           setState(() => loading = true);
                           dynamic result =
@@ -92,17 +143,33 @@ class _SignInState extends State<SignIn> {
                           }
                         }
                       },
-                    ),
-                    SizedBox(height: 30),
+                  ),
+                  SizedBox(height: size.height * 0.03),
+                  AlreadyHaveAnAccountCheck(
+                    press: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Register();
+                          },
+                        ),
+                      );
+                    },
+                  ),
+                  SizedBox(height: 20),
                     Text(
                       error,
                       style: TextStyle(color: Colors.red, fontSize: 14),
                     ),
-                    SizedBox(height: 20),
-                  ],
-                ),
+                ],
               ),
             ),
-          );
+        ],
+      ),
+    ),
+            );
   }
 }
+
+   

@@ -27,6 +27,7 @@ class _MyAppState extends State<MyApp> {
     return StreamProvider<UserModel>.value(
       value: AuthServices().user,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         routes: {
           '/': (context) => Wrapper(),
           '/carecentre': (context) => Carecentres(),
