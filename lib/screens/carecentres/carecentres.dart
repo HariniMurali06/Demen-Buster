@@ -49,7 +49,7 @@ class _CarecentresState extends State<Carecentres> {
     " 044 4200 2288",
     "1800 102 5555",
     " 0124 414 1414 ",
-    " 0124 451 1111 "
+    " 0124 451 1111 ",
   ];
 
   @override
@@ -71,31 +71,40 @@ class _CarecentresState extends State<Carecentres> {
                 SizedBox(
                   height: 10,
                 ),
-                Text(
-                  address[index],
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                Expanded(
+                  flex: 2,
+                  child: Text(
+                    address[index],
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 SizedBox(
                   height: 5,
                 ),
-                Text(
-                  contact[index],
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
+                Expanded(
+                  flex: 2,
+                  child: Text(
+                    contact[index],
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-                Row(
-                  children: [
-                    FlatButton.icon(
-                      label: Text("Details"),
-                      icon: Icon(Icons.info_outline),
-                      onPressed: () {},
-                    ),
-                  ],
+                Expanded(
+                  flex: 1,
+                  child: Row(
+                    children: [
+                      FlatButton.icon(
+                        label: Text("Details"),
+                        icon: Icon(Icons.info_outline),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

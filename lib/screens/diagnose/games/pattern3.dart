@@ -55,7 +55,7 @@ class _PatternThirdState extends State<PatternThird> {
               textAlign: TextAlign.center,
               style: Theme.of(context)
                   .textTheme
-                  .headline
+                  .headline5
                   .copyWith(fontSize: 30, fontFamily: 'Quicksand'),
             ),
             SizedBox(
@@ -69,7 +69,8 @@ class _PatternThirdState extends State<PatternThird> {
                   Radius.circular(30),
                 ),
                 image: DecorationImage(
-                    image: AssetImage('assets/images/p5.png'), fit: BoxFit.fitHeight),
+                    image: AssetImage('assets/images/p5.png'),
+                    fit: BoxFit.fitHeight),
               ),
             ),
             SizedBox(
@@ -80,7 +81,7 @@ class _PatternThirdState extends State<PatternThird> {
               textAlign: TextAlign.left,
               style: Theme.of(context)
                   .textTheme
-                  .body1
+                  .bodyText2
                   .copyWith(fontSize: 22, fontFamily: 'Quicksand'),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.04),

@@ -12,82 +12,82 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text("In home"),
         backgroundColor: Colors.green[600],
-        actions:[
+        actions: [
           FlatButton.icon(
             icon: Icon(Icons.person),
-            onPressed:() async{
+            onPressed: () async {
               await _auth.signOut();
             },
             label: Text("Logout"),
           ),
         ],
       ),
-       body:Center(
-            child: new Container(
-            width:double.infinity,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors:[
-                  Colors.white,
-                  Colors.yellow[100],
-                ] )
-            ),
-            child: Column(children: <Widget>[
-              Image.asset("assets/images/AlzheimersAwarenessRibbon.jpg",
-              height: 210.0),
-              SizedBox(
-                height:20.0,
+      body: Center(
+        child: new Container(
+          child: Column(
+            children: <Widget>[
+              Image.asset(
+                "assets/images/AlzheimersAwarenessRibbon.jpg",
+                height: 210.0,
               ),
-              Container(  
-              margin: EdgeInsets.all(25),  
-              child: FlatButton(  
-                child: Text('Diagnose', style: TextStyle(fontSize: 20.0),),  
-                color: Colors.blueAccent,  
-                textColor: Colors.white,  
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Diagnose()),
-                  );
-                },  
-              )
-            ),
-
-              Container(  
-              margin: EdgeInsets.all(25),  
-              child: FlatButton(  
-                child: Text('Care centres', style: TextStyle(fontSize: 20.0),),  
-                color: Colors.blueAccent,  
-                textColor: Colors.white,  
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Carecentres()),
-                  );
-                },  
-              )
-            ),
-
-              Container(  
-              margin: EdgeInsets.all(25),  
-              child: FlatButton(  
-                child: Text('Know about Dementia', style: TextStyle(fontSize: 20.0),),  
-                color: Colors.blueAccent,  
-                textColor: Colors.white,  
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Info()),
-                  );
-                },  
-              )
-            ),
-          ]
-         )
+              SizedBox(
+                height: 20.0,
+              ),
+              Container(
+                margin: EdgeInsets.all(25),
+                child: FlatButton(
+                  child: Text(
+                    'Diagnose',
+                    style: TextStyle(fontSize: 20.0),
+                  ),
+                  color: Colors.blueAccent,
+                  textColor: Colors.white,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Diagnose()),
+                    );
+                  },
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(25),
+                child: FlatButton(
+                  child: Text(
+                    'Care centres',
+                    style: TextStyle(fontSize: 20.0),
+                  ),
+                  color: Colors.blueAccent,
+                  textColor: Colors.white,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Carecentres()),
+                    );
+                  },
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(25),
+                child: FlatButton(
+                  child: Text(
+                    'Know about Dementia',
+                    style: TextStyle(fontSize: 20.0),
+                  ),
+                  color: Colors.blueAccent,
+                  textColor: Colors.white,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Info()),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
-       )
     );
   }
 }

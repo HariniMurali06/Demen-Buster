@@ -62,7 +62,7 @@ class _CelebrityGameState extends State<CelebrityGame> {
               textAlign: TextAlign.center,
               style: Theme.of(context)
                   .textTheme
-                  .headline
+                  .headline5
                   .copyWith(fontSize: 30, fontFamily: 'Quicksand'),
             ),
             SizedBox(
@@ -76,7 +76,8 @@ class _CelebrityGameState extends State<CelebrityGame> {
                   Radius.circular(30),
                 ),
                 image: DecorationImage(
-                    image: AssetImage('assets/images/Mukesh.jpg'), fit: BoxFit.cover),
+                    image: AssetImage('assets/images/Mukesh.jpg'),
+                    fit: BoxFit.cover),
               ),
             ),
             SizedBox(
@@ -87,7 +88,7 @@ class _CelebrityGameState extends State<CelebrityGame> {
               textAlign: TextAlign.left,
               style: Theme.of(context)
                   .textTheme
-                  .body1
+                  .bodyText2
                   .copyWith(fontSize: 22, fontFamily: 'Quicksand'),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.014),
@@ -111,7 +112,7 @@ class _CelebrityGameState extends State<CelebrityGame> {
                         "1. Anil Ambani",
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.white),
                       ),
                     ),
@@ -134,7 +135,7 @@ class _CelebrityGameState extends State<CelebrityGame> {
                         "2. Amitabh Bachchan",
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.white),
                       ),
                     ),
@@ -157,7 +158,7 @@ class _CelebrityGameState extends State<CelebrityGame> {
                         "3. Mukesh Ambani",
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.white),
                       ),
                     ),
@@ -180,7 +181,7 @@ class _CelebrityGameState extends State<CelebrityGame> {
                         "4. Narendra Modi",
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.white),
                       ),
                     ),

@@ -5,7 +5,6 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:Demen_Buster/screens/home/home.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-
 class Diagnose extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class Diagnose extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context)
                   .textTheme
-                  .headline
+                  .headline5
                   .copyWith(fontSize: 39, color: Colors.blueGrey[600]),
             ),
             Text(
@@ -62,7 +61,7 @@ class Diagnose extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.white),
                       ),
                     ),
@@ -90,7 +89,7 @@ class Diagnose extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.white),
                       ),
                     ),
@@ -104,7 +103,8 @@ class Diagnose extends StatelessWidget {
               width: double.infinity,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/images/gamer.gif'), fit: BoxFit.cover),
+                    image: AssetImage('assets/images/gamer.gif'),
+                    fit: BoxFit.cover),
               ),
             ),
             SizedBox(
@@ -112,23 +112,21 @@ class Diagnose extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Home(),
-                      ),
-                    );
-                  },
-              child: 
-                   Icon(
-                      Icons.logout,
-                      color: Colors.black,
-                    ),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Home(),
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.logout,
+                color: Colors.black,
+              ),
             ),
           ],
         ),
       ),
     );
   }
-  
 }

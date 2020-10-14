@@ -66,7 +66,7 @@ class _CelebrityThirdState extends State<CelebrityThird> {
               textAlign: TextAlign.center,
               style: Theme.of(context)
                   .textTheme
-                  .headline
+                  .headline5
                   .copyWith(fontSize: 30, fontFamily: 'Quicksand'),
             ),
             SizedBox(
@@ -80,7 +80,8 @@ class _CelebrityThirdState extends State<CelebrityThird> {
                   Radius.circular(30),
                 ),
                 image: DecorationImage(
-                    image: AssetImage('assets/images/APJ.jpg'), fit: BoxFit.cover),
+                    image: AssetImage('assets/images/APJ.jpg'),
+                    fit: BoxFit.cover),
               ),
             ),
             SizedBox(
@@ -91,7 +92,7 @@ class _CelebrityThirdState extends State<CelebrityThird> {
               textAlign: TextAlign.left,
               style: Theme.of(context)
                   .textTheme
-                  .body1
+                  .bodyText2
                   .copyWith(fontSize: 22, fontFamily: 'Quicksand'),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.014),
@@ -115,7 +116,7 @@ class _CelebrityThirdState extends State<CelebrityThird> {
                         "1. Amritya Sen",
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.white),
                       ),
                     ),
@@ -138,7 +139,7 @@ class _CelebrityThirdState extends State<CelebrityThird> {
                         "2. Sundar Pichai",
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.white),
                       ),
                     ),
@@ -161,7 +162,7 @@ class _CelebrityThirdState extends State<CelebrityThird> {
                         "3. Arvind Kejriwal",
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.white),
                       ),
                     ),
@@ -184,7 +185,7 @@ class _CelebrityThirdState extends State<CelebrityThird> {
                         "4. APJ Abdul Kalam",
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.white),
                       ),
                     ),

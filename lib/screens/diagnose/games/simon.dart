@@ -211,14 +211,14 @@ class _SimonGameState extends State<SimonGame> with TickerProviderStateMixin {
                     'Game Over',
                     style: Theme.of(context)
                         .textTheme
-                        .headline
+                        .headline5
                         .copyWith(fontFamily: 'Quicksand', color: Colors.white),
                   )
                 : Text(
                     'Level ${levelCounter.toString()}',
                     style: Theme.of(context)
                         .textTheme
-                        .headline
+                        .headline5
                         .copyWith(fontFamily: 'Quicksand'),
                   ),
           ),
@@ -398,7 +398,7 @@ class _SimonGameState extends State<SimonGame> with TickerProviderStateMixin {
                             textAlign: TextAlign.center,
                             style: Theme.of(context)
                                 .textTheme
-                                .body1
+                                .bodyText2
                                 .copyWith(color: Colors.white),
                           ),
                         ),
@@ -424,7 +424,7 @@ class _SimonGameState extends State<SimonGame> with TickerProviderStateMixin {
                             textAlign: TextAlign.center,
                             style: Theme.of(context)
                                 .textTheme
-                                .body1
+                                .bodyText2
                                 .copyWith(color: Colors.white),
                           ),
                         ),

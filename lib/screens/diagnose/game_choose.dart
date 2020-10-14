@@ -33,7 +33,7 @@ class _GameChooseState extends State<GameChoose> {
                   'Choose a Game',
                   style: Theme.of(context)
                       .textTheme
-                      .headline
+                      .headline5
                       .copyWith(fontSize: 37, color: Colors.white),
                 ),
                 Stack(
@@ -85,7 +85,7 @@ class _GameChooseState extends State<GameChoose> {
                                 textAlign: TextAlign.center,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .body1
+                                    .bodyText2
                                     .copyWith(color: Colors.white),
                               ),
                             ),
@@ -110,7 +110,8 @@ class _GameChooseState extends State<GameChoose> {
                               Radius.circular(30),
                             ),
                             image: DecorationImage(
-                                image: AssetImage('assets/images/epic_gamer.jpg'),
+                                image:
+                                    AssetImage('assets/images/epic_gamer.jpg'),
                                 fit: BoxFit.cover),
                           ),
                         ),
@@ -144,7 +145,7 @@ class _GameChooseState extends State<GameChoose> {
                                 textAlign: TextAlign.center,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .body1
+                                    .bodyText2
                                     .copyWith(color: Colors.white),
                               ),
                             ),
@@ -169,7 +170,8 @@ class _GameChooseState extends State<GameChoose> {
                               Radius.circular(30),
                             ),
                             image: DecorationImage(
-                                image: AssetImage('assets/images/sneak_peek.png'),
+                                image:
+                                    AssetImage('assets/images/sneak_peek.png'),
                                 fit: BoxFit.cover),
                           ),
                         ),
@@ -203,7 +205,7 @@ class _GameChooseState extends State<GameChoose> {
                                 textAlign: TextAlign.center,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .body1
+                                    .bodyText2
                                     .copyWith(color: Colors.white),
                               ),
                             ),

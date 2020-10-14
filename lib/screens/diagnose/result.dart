@@ -5,8 +5,9 @@ class Result extends StatefulWidget {
   final int simonLevel;
   final int celebrityPoints;
   final int patternPoints;
+  final int total;
   Result(
-      {this.simonLevel = 0, this.celebrityPoints = 0, this.patternPoints = 0});
+      {this.simonLevel = 0, this.celebrityPoints = 0, this.patternPoints = 0,this.total=100});
   @override
   _ResultState createState() => _ResultState();
 }
@@ -32,14 +33,14 @@ class _ResultState extends State<Result> {
                         "Rest assured, you don't have Alzheimer's!",
                         style: Theme.of(context)
                             .textTheme
-                            .headline
+                            .headline5
                             .copyWith(fontSize: 33, color: Colors.green),
                       )
                     : Text(
                         "Unfortunately, you might have early onset Alzheimer's and you need to see a doctor point blank",
                         style: Theme.of(context)
                             .textTheme
-                            .headline
+                            .headline5
                             .copyWith(fontSize: 25, color: Colors.red[300]),
                       ),
                 SizedBox(
@@ -49,7 +50,7 @@ class _ResultState extends State<Result> {
                   'Simon Points',
                   style: Theme.of(context)
                       .textTheme
-                      .headline
+                      .headline5
                       .copyWith(fontSize: 30),
                 ),
                 (widget.simonLevel >= 6)
@@ -57,14 +58,14 @@ class _ResultState extends State<Result> {
                         widget.simonLevel.toString(),
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.green, fontSize: 25),
                       )
                     : Text(
                         widget.simonLevel.toString(),
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.red, fontSize: 25),
                       ),
                 SizedBox(
@@ -75,7 +76,7 @@ class _ResultState extends State<Result> {
                   textAlign: TextAlign.left,
                   style: Theme.of(context)
                       .textTheme
-                      .headline
+                      .headline5
                       .copyWith(fontSize: 30),
                 ),
                 (widget.celebrityPoints > 4)
@@ -83,14 +84,14 @@ class _ResultState extends State<Result> {
                         widget.celebrityPoints.toString(),
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.green, fontSize: 25),
                       )
                     : Text(
                         widget.celebrityPoints.toString(),
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.red, fontSize: 25),
                       ),
                 SizedBox(
@@ -100,7 +101,7 @@ class _ResultState extends State<Result> {
                   'Riddle Points',
                   style: Theme.of(context)
                       .textTheme
-                      .headline
+                      .headline5
                       .copyWith(fontSize: 30),
                 ),
                 (widget.patternPoints > 2)
@@ -108,14 +109,14 @@ class _ResultState extends State<Result> {
                         widget.patternPoints.toString(),
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.green, fontSize: 25),
                       )
                     : Text(
                         widget.patternPoints.toString(),
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.red, fontSize: 25),
                       ),
                 SizedBox(
@@ -142,7 +143,7 @@ class _ResultState extends State<Result> {
                         textAlign: TextAlign.center,
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.white),
                       ),
                     ),

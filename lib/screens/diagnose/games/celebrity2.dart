@@ -66,7 +66,7 @@ class _CelebritySecondState extends State<CelebritySecond> {
               textAlign: TextAlign.center,
               style: Theme.of(context)
                   .textTheme
-                  .headline
+                  .headline5
                   .copyWith(fontSize: 30, fontFamily: 'Quicksand'),
             ),
             SizedBox(
@@ -80,7 +80,8 @@ class _CelebritySecondState extends State<CelebritySecond> {
                   Radius.circular(30),
                 ),
                 image: DecorationImage(
-                    image: AssetImage('assets/images/mahatma.jpg'), fit: BoxFit.cover),
+                    image: AssetImage('assets/images/mahatma.jpg'),
+                    fit: BoxFit.cover),
               ),
             ),
             SizedBox(
@@ -91,7 +92,7 @@ class _CelebritySecondState extends State<CelebritySecond> {
               textAlign: TextAlign.left,
               style: Theme.of(context)
                   .textTheme
-                  .body1
+                  .bodyText2
                   .copyWith(fontSize: 22, fontFamily: 'Quicksand'),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.014),
@@ -115,7 +116,7 @@ class _CelebritySecondState extends State<CelebritySecond> {
                         "1. Bhagat Singh",
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.white),
                       ),
                     ),
@@ -138,7 +139,7 @@ class _CelebritySecondState extends State<CelebritySecond> {
                         "2. Mahatma Gandhi",
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.white),
                       ),
                     ),
@@ -161,7 +162,7 @@ class _CelebritySecondState extends State<CelebritySecond> {
                         "3. Subhash Chandra Bose",
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.white),
                       ),
                     ),
@@ -184,7 +185,7 @@ class _CelebritySecondState extends State<CelebritySecond> {
                         "4. Lal Bahadur Shastri",
                         style: Theme.of(context)
                             .textTheme
-                            .body1
+                            .bodyText2
                             .copyWith(color: Colors.white),
                       ),
                     ),
