@@ -7,7 +7,6 @@ class Details extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     data = ModalRoute.of(context).settings.arguments;
-    print(data.toString());
     return Scaffold(
       appBar: AppBar(title: Text(data['type']), backgroundColor: Colors.green),
       body: SingleChildScrollView(
@@ -20,6 +19,10 @@ class Details extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
+                    Image.network(
+                      data['image'],
+                      fit: BoxFit.contain,
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(

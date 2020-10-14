@@ -6,27 +6,49 @@ class Carecentres extends StatefulWidget {
 }
 
 class _CarecentresState extends State<Carecentres> {
+  final image = [
+    'https://www.myfirstcollege.com/wp-content/uploads/2019/02/50856-teowvzsvpi-1486357354-1024x538.jpg', //1
+    'https://cdn.telanganatoday.com/wp-content/uploads/2018/06/KIMS.jpg', //2
+    'https://www.vaidam.com/sites/default/files/hospitals/blk_hospital.jpg', //3
+    'https://avocure-uploads.s3.amazonaws.com/uploads/clinic/cover_pic_url/44/0.05775000_1461667459_malar.png', //4
+    'https://www.nirujahealthtech.com/wp-content/uploads/2019/06/Gleneagles-Global-Hospitals.png', //5
+    'https://ahmedabad.apollohospitals.com/wp-content/uploads/2017/10/glry_g4_2013081239-864x607.jpg', //6
+    'https://photos.wikimapia.org/p/00/05/99/54/18_big.jpg', //7
+    'https://www.manipalhospitals.com/uploads/timeline/TIMELINE_11.jpg', //8
+    'https://s.ndtvimg.com/images/entities/300/medanta-the-medicity_636408318760267706_108167.jpg', //9
+    'https://www.vaidam.com/sites/default/files/hospitals/aretmis-gurgaon.jpg', //10
+    'https://www.gericare.in/static/images/services/nursing.jpg', //11
+    'https://images.jdmagicbox.com/comp/coimbatore/f5/0422px422.x422.170127213335.f7f5/catalogue/grand-world-elder-care-coimbatore-gfoesatiqj.jpg?clr=#3b3b2b', //12
+    'https://i.pinimg.com/originals/c9/bc/d3/c9bcd31a38ea9a122abd6d28a56373f6.jpg', //13
+    'https://i.ytimg.com/vi/XnH0iTZX47U/hqdefault.jpg', //14
+    'https://www.drsantoshshetty.com/wp-content/uploads/2018/08/Dignity-Foundation-to-Create-an-Awareness-on-Arthritis-Speaker-Dr-Santosh-Shetty-Mumbai-960x750.jpg', //15
+    'https://lh3.googleusercontent.com/proxy/Lfiky0nq6kysGNP3B25XEyFKwW60XnO0LqjlzbTlcy_bSlvig_SvgZt_n9PV4tt8y_VNiIDHOooeGmDbiyCrlKybd7X6M5r8_2bNitYilDcnP0TRsA', //16
+    'https://lh3.googleusercontent.com/proxy/2AUqqlwUBAYZkqx5DGyUryCu-dHAIR2dMQwfzHeo06XYlTLLKUKY7w4N4T0LzYZsxefrBLR8shwRAXdnfy7rxpJMQ-ZoTYRajAYw68CjHRQET8jC41fDJqqIIZpeZKdrDtTWESsOZUNteRoMCkQOmzQ3sNfMahs', //17
+    'https://secureservercdn.net/104.238.69.231/a22.d99.myftpupload.com/wp-content/uploads/2017/08/helpage-1.png', //18
+    'https://images.milaap.org/milaap/image/upload/v1515045832/production/images/campaign/26829/cf-0249_mbbpd6_1515045831.jpg?enhance=true&format=jpg&height=315&mode=fit&width=420', //19
+    'https://ardsi.org/wp-content/uploads/2020/02/awareness-1024x1024.png', //20
+  ];
   final name = [
-    'ALL INDIA INSTITUTE OF MEDICAL SCIENCES, NEW DELHI',
-    'KIMS HOSPITAL',
-    'BLK SUPER SPECIALITY HOSPITAL',
-    'FORTIS MALAR HOSPITAL CHENNAI',
-    ' GLENEAGLES GLOBAL HEALTH CITY',
-    'APOLLO CITY CENTRE HOSPITAL',
-    'MIOT INTERNATIONALS',
-    'MANIPAL HOSPITAL BANGLORE',
-    'MEDANTA THE MEDICITY, GURGAON',
-    'ARTEMIS HOSPITAL, GURGAON',
-    'VEE CARE HOME NURSING SERVICE',
-    'GRAND WORLD ELDER CARE',
-    'ANVAYAA- SENIOR HOME HEALTH CARE SERVICES',
-    'NIGHTINGALES MEDICAL TRUST',
-    'DIGNITY FOUNDATIONS',
-    'ALZHEIMERS AND RELATED DISORDER SOCIETY-BANGALORE CHAPTERS',
-    'KSHETRA ASSISTED LIVING AND DEMENTIA CARE FACILITY',
-    'HELPAGE INDIA',
-    'DEMCARE, DEMENTIA CARE IN SCARF',
-    'ARDSI CHENNAI CHAPTER AND MADRAS MEMORY CLINIC'
+    'ALL INDIA INSTITUTE OF MEDICAL SCIENCES, NEW DELHI', //1
+    'KIMS HOSPITAL', //2
+    'BLK SUPER SPECIALITY HOSPITAL', //3
+    'FORTIS MALAR HOSPITAL CHENNAI', //4
+    'GLENEAGLES GLOBAL HEALTH CITY', //5
+    'APOLLO CITY CENTRE HOSPITAL', //6
+    'MIOT INTERNATIONALS', //7
+    'MANIPAL HOSPITAL BANGLORE', //8
+    'MEDANTA THE MEDICITY, GURGAON', //9
+    'ARTEMIS HOSPITAL, GURGAON', //10
+    'VEE CARE HOME NURSING SERVICE', //11
+    'GRAND WORLD ELDER CARE', //12
+    'ANVAYAA- SENIOR HOME HEALTH CARE SERVICES', //13
+    'NIGHTINGALES MEDICAL TRUST', //14
+    'DIGNITY FOUNDATIONS', //15
+    'ALZHEIMERS AND RELATED DISORDER SOCIETY-BANGALORE CHAPTERS', //16
+    'KSHETRA ASSISTED LIVING AND DEMENTIA CARE FACILITY', //17
+    'HELPAGE INDIA', //18
+    'DEMCARE, DEMENTIA CARE IN SCARF', //19
+    'ARDSI CHENNAI CHAPTER AND MADRAS MEMORY CLINIC' //20
   ];
 
   final address = [
@@ -122,17 +144,11 @@ class _CarecentresState extends State<Carecentres> {
             elevation: 20,
             child: Column(
               children: [
-                SizedBox(
-                  height: 10,
-                ),
                 Expanded(
-                  flex: 2,
-                  child: Text(
-                    name[index],
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  flex: 3,
+                  child: Image.network(
+                    image[index],
+                    fit: BoxFit.contain,
                   ),
                 ),
                 SizedBox(
@@ -141,9 +157,22 @@ class _CarecentresState extends State<Carecentres> {
                 Expanded(
                   flex: 2,
                   child: Text(
-                    type[index],
+                    name[index],
                     style: TextStyle(
                       fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Text(
+                    type[index],
+                    style: TextStyle(
+                      fontSize: 10,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -156,13 +185,13 @@ class _CarecentresState extends State<Carecentres> {
                         label: Text("Details"),
                         icon: Icon(Icons.info_outline),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/details',
-                              arguments: {
-                                'address':address[index],
-                                'name':name[index],
-                                'type':type[index],
-                                'number':number[index],
-                              });
+                          Navigator.pushNamed(context, '/details', arguments: {
+                            'address': address[index],
+                            'name': name[index],
+                            'type': type[index],
+                            'number': number[index],
+                            'image': image[index],
+                          });
                         },
                       ),
                     ],
