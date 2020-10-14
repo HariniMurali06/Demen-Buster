@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'package:Demen_Buster/model/userModel.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'screens/carecentres/details.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,9 +29,11 @@ class _MyAppState extends State<MyApp> {
       child: MaterialApp(
         routes: {
           '/': (context) => Wrapper(),
-          '/carecentre':(context)=>Carecentres(),
+          '/carecentre': (context) => Carecentres(),
+          '/details': (context) => Details(),
         },
       ),
     );
   }
+  
 }
