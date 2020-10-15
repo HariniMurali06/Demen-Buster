@@ -11,13 +11,17 @@ class Info extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             SizedBox(height: 20.0),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                
+                elevation: 10,
+                borderOnForeground: false,
+                shadowColor: Colors.blue,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -37,6 +41,8 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.red[450],
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -56,6 +62,8 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.yellow,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -63,7 +71,7 @@ class Info extends StatelessWidget {
                     children: [
                       Text("-->Memory",
                           style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(height: 20.0),
+                      SizedBox(height: 20.0),
                       Text(
                           "Everyone has occasional memory lapses. It's normal to lose track of where you put your keys or forget the name of an acquaintance. But the memory loss associated with Alzheimer's disease persists and worsens, affecting the ability to function at work or at home."),
                     ],
@@ -74,6 +82,8 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.yellow,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -104,13 +114,16 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.yellow,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text("-->Making  judgments and decisions",
-                          style: TextStyle(fontWeight: FontWeight.bold)),SizedBox(height: 20.0),
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      SizedBox(height: 20.0),
                       Text(
                           "The ability to make reasonable decisions and judgments in everyday situations will decline. For example, a person may make poor or uncharacteristic choices in social interactions or wear clothes that are inappropriate for the weather. It may be more difficult to respond effectively to everyday problems, such as food burning on the stove or unexpected driving situations."),
                     ],
@@ -122,6 +135,8 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.yellow,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -129,7 +144,7 @@ class Info extends StatelessWidget {
                     children: [
                       Text("-->Planning and performing familiar tasks",
                           style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(height: 20.0),
+                      SizedBox(height: 20.0),
                       Text(
                           "Once-routine activities that require sequential steps, such as planning and cooking a meal or playing a favorite game, become a struggle as the disease progresses. Eventually, people with advanced Alzheimer's may forget how to perform basic tasks such as dressing and bathing."),
                     ],
@@ -141,6 +156,8 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.yellow,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -148,7 +165,7 @@ class Info extends StatelessWidget {
                     children: [
                       Text("-->Changes in personality and behavior",
                           style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(height: 20.0),
+                      SizedBox(height: 20.0),
                       Text(
                           "Brain changes that occur in Alzheimer's disease can affect moods and behaviors. Problems may include the following:"),
                       Text("*  Depression"),
@@ -171,6 +188,8 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.yellow,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -189,6 +208,8 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.green[300],
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -196,7 +217,7 @@ class Info extends StatelessWidget {
                     children: [
                       Text("-->Stage 1: No Impairment",
                           style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(height: 20.0),
+                      SizedBox(height: 20.0),
                       Text(
                           "During this stage, Alzheimer’s is not detectable and no memory problems or other symptoms of dementia are evident."),
                     ],
@@ -208,6 +229,8 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.green[100],
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -215,7 +238,7 @@ class Info extends StatelessWidget {
                     children: [
                       Text("-->Stage 2: Very Mild Decline",
                           style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(height: 20.0),
+                      SizedBox(height: 20.0),
                       Text(
                           "The senior may notice minor memory problems or lose things around the house, although not to the point where the memory loss can easily be distinguished from normal age-related memory loss. The person will still do well on memory tests and the disease is unlikely to be detected by loved ones or physicians."),
                     ],
@@ -227,6 +250,8 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.orange[200],
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -234,7 +259,7 @@ class Info extends StatelessWidget {
                     children: [
                       Text("-->Stage 3: Mild Decline",
                           style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(height: 20.0),
+                      SizedBox(height: 20.0),
                       Text(
                           "At this stage, the family members and friends of the senior may begin to notice cognitive problems. Performance on memory tests are affected and physicians will be able to detect impaired cognitive function."),
                       Text(
@@ -254,6 +279,8 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.orange[400],
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -261,7 +288,7 @@ class Info extends StatelessWidget {
                     children: [
                       Text("-->Stage 4: Moderate Decline",
                           style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(height: 20.0),
+                      SizedBox(height: 20.0),
                       Text(
                           "In stage four of Alzheimer’s, clear-cut symptoms of the disease are apparent. People with stage four of Alzheimer’s:"),
                       SizedBox(height: 5.0),
@@ -279,6 +306,8 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.red[200],
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -286,7 +315,7 @@ class Info extends StatelessWidget {
                     children: [
                       Text("-->Stage 5: Moderately Severe Decline",
                           style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(height: 20.0),
+                      SizedBox(height: 20.0),
                       Text(
                           "During the fifth stage of Alzheimer’s, people begin to need help with many day-to-day activities. People in stage five of the disease may experience:"),
                       SizedBox(height: 5.0),
@@ -305,6 +334,8 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.red[400],
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -312,7 +343,7 @@ class Info extends StatelessWidget {
                     children: [
                       Text("-->Stage 6: Severe Decline",
                           style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(height: 20.0),
+                      SizedBox(height: 20.0),
                       Text(
                           "People with the sixth stage of Alzheimer’s need constant supervision and frequently require professional care. Symptoms include:"),
                       SizedBox(height: 5.0),
@@ -336,6 +367,8 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.red,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -343,7 +376,7 @@ class Info extends StatelessWidget {
                     children: [
                       Text("-->Stages 7: Very Severe Decline",
                           style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(height: 20.0),
+                      SizedBox(height: 20.0),
                       Text(
                           "Stage seven is the final stage of Alzheimer’s. Because the disease is a terminal illness, people in stage seven are nearing death. In stage seven of the disease, people lose the ability to communicate or respond to their environment. While they may still be able to utter words and phrases, they have no insight into their condition and need assistance with all activities of daily living. In the final stages of Alzheimer’s, people may lose their ability to swallow."),
                     ],
@@ -355,6 +388,8 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.yellow,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -362,7 +397,7 @@ class Info extends StatelessWidget {
                     children: [
                       Text("CAUSES ",
                           style: TextStyle(color: Colors.blue[900])),
-                          SizedBox(height: 20.0),
+                      SizedBox(height: 20.0),
                       Text(
                           "Scientists believe that for most people, Alzheimer's disease is caused by a combination of genetic, lifestyle and environmental factors that affect the brain over time. Less than 1 percent of the time, Alzheimer's is caused by specific genetic changes that virtually guarantee a person will develop the disease. These rare occurrences usually result in disease onset in middle age. The exact causes of Alzheimer's disease aren't fully understood, but at its core are problems with brain proteins that fail to function normally, disrupt the work of brain cells (neurons) and unleash a series of toxic events. Neurons are damaged, lose connections to each other and eventually die. The damage most often starts in the region of the brain that controls memory, but the process begins years before the first symptoms. The loss of neurons spreads in a somewhat predictable pattern to other regions of the brains. By the late stage of the disease, the brain has shrunk significantly."),
                       SizedBox(height: 5.0),
@@ -389,6 +424,8 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                elevation: 10,
+                shadowColor: Colors.green,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -409,12 +446,13 @@ class Info extends StatelessWidget {
                           "*  If you smoke, ask your doctor for help to quit smoking"),
                       Text(
                           "*  Studies have shown that preserved thinking skills later in life and a reduced risk of Alzheimer's disease are associated with participating in social events, reading, dancing, playing board games, creating art, playing an instrument, and other activities that require mental and social engagement."),
-                      SizedBox(height: 20.0),
+                      SizedBox(height: 10.0),
                     ],
                   ),
                 ),
               ),
             ),
+            SizedBox(height: 50.0),
           ],
         ),
       ),
