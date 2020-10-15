@@ -6,6 +6,7 @@ class Carecentres extends StatefulWidget {
 }
 
 class _CarecentresState extends State<Carecentres> {
+  
   final image = [
     'https://www.myfirstcollege.com/wp-content/uploads/2019/02/50856-teowvzsvpi-1486357354-1024x538.jpg', //1
     'https://cdn.telanganatoday.com/wp-content/uploads/2018/06/KIMS.jpg', //2
@@ -27,6 +28,29 @@ class _CarecentresState extends State<Carecentres> {
     'https://secureservercdn.net/104.238.69.231/a22.d99.myftpupload.com/wp-content/uploads/2017/08/helpage-1.png', //18
     'https://images.milaap.org/milaap/image/upload/v1515045832/production/images/campaign/26829/cf-0249_mbbpd6_1515045831.jpg?enhance=true&format=jpg&height=315&mode=fit&width=420', //19
     'https://ardsi.org/wp-content/uploads/2020/02/awareness-1024x1024.png', //20
+  ];
+  final web=[
+    'https://www.aiims.edu/en.html',//1
+    'https://www.kimshospitals.com/',//2
+    'https://www.blkhospital.com/',//3
+    '',//4
+    '',//5
+    '',//6
+    '',//7
+    '',//8
+    '',//9
+    '',//10
+    '',//11
+    '',//12
+    '',//13
+    '',//14
+    '',//15
+    '',//!6
+    '',//17
+    '',//18
+    '',//19
+    '',//20
+
   ];
   final name = [
     'ALL INDIA INSTITUTE OF MEDICAL SCIENCES, NEW DELHI', //1
