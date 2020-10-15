@@ -65,8 +65,9 @@ class _SignInState extends State<SignIn> {
                         //   onChanged: (value) {},
                         // ),
                         Form(
-                            key: _formKey,
-                            child: Column(children: [
+                          key: _formKey,
+                          child: Column(
+                            children: [
                               SizedBox(
                                 height: 20,
                               ),
@@ -118,7 +119,9 @@ class _SignInState extends State<SignIn> {
                                   setState(() => passWord = val);
                                 },
                               ),
-                            ],),),
+                            ],
+                          ),
+                        ),
                         SizedBox(
                           height: 20,
                         ),
@@ -137,6 +140,8 @@ class _SignInState extends State<SignIn> {
                                     loading = false;
                                   },
                                 );
+                              } else {
+                                Navigator.pushNamed(context, '/');
                               }
                             }
                           },
