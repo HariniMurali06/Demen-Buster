@@ -30,26 +30,26 @@ class _CarecentresState extends State<Carecentres> {
     'https://ardsi.org/wp-content/uploads/2020/02/awareness-1024x1024.png', //20
   ];
   final web = [
-    "aiims.edu",//1
-    "kimshospitals.com",//2
-    "info@blkhospital.com",//3
-    "fortismalar.com",//4
-    "gleneaglesglobalhospitals.com",//5
-    "chennai.apollohospitals.com",//6
-    "miotinternational.com",//7
-    "manipalhospitals.com",//8
-    "medanta.org",//9
-    "artemishospitals.com",//10
-    "veecare.co.in",//11
-    "grandworldeldercare.com",//12
-    "anvayaa.com",//13
-    "nightingaleseldercare.com",//14
-    "dignityfoundation.com",//15
-    "dementiabangalore.in",//16
-    "kshetracare.in",//17
-    "helpageindia.org",//18
-    "dementiaindia.org",//19
-    "ardsi.org",//20
+    "https://www.aiims.edu",//1
+    "https://www.kimshospitals.com",//2
+    "https://www.info@blkhospital.com",//3
+    "https://www.fortismalar.com",//4
+    "https://www.gleneaglesglobalhospitals.com",//5
+    "https://www.chennai.apollohospitals.com",//6
+    "https://www.miotinternational.com",//7
+    "https://www.manipalhospitals.com",//8
+    "https://www.medanta.org",//9
+    "https://www.artemishospitals.com",//10
+    "https://www.veecare.co.in",//11
+    "https://www.grandworldeldercare.com",//12
+    "https://www.anvayaa.com",//13
+    "https://www.nightingaleseldercare.com",//14
+    "https://www.dignityfoundation.com",//15
+    "https://www.dementiabangalore.in",//16
+    "https://www.kshetracare.in",//17
+    "https://www.helpageindia.org",//18
+    "https://www.dementiaindia.org",//19
+    "https://www.ardsi.org",//20
   ];
 
   final name = [

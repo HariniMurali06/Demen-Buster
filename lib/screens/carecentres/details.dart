@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 class Details extends StatelessWidget {
   Map data;
@@ -30,9 +29,9 @@ class Details extends StatelessWidget {
                 child: Column(
                   children: [
                     Image.network(
-                    data['image'],
-                    fit: BoxFit.contain,
-                  ),
+                      data['image'],
+                      fit: BoxFit.contain,
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
@@ -57,9 +56,7 @@ class Details extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         FlatButton.icon(
-                          icon: Icon(
-                            Icons.phone, 
-                            color: Colors.blue),
+                          icon: Icon(Icons.phone, color: Colors.blue),
                           label: Text("Call"),
                           onPressed: _launchURL,
                         ),
@@ -78,7 +75,7 @@ class Details extends StatelessWidget {
                         Icons.subtitles,
                         color: Colors.black87,
                       ),
-                      label: Text("Call"),
+                      label: Text("Website"),
                       onPressed: _launchWEB,
                     ),
                     SizedBox(height: 20),
@@ -93,6 +90,7 @@ class Details extends StatelessWidget {
   }
 
   _launchWEB() async {
+    print(data['web']);
     if (await canLaunch(data['web'])) {
       await launch(data['web']);
     } else {
