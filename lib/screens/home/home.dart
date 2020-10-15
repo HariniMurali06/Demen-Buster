@@ -6,96 +6,144 @@ import 'package:Demen_Buster/screens/info/info.dart';
 import 'package:Demen_Buster/services/database.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:Demen_Buster/common/constants.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:Demen_Buster/button/button1.dart';
+import 'package:Demen_Buster/button/button2.dart';
+import 'package:Demen_Buster/button/button3.dart';
 
 class Home extends StatelessWidget {
   final AuthServices _auth = AuthServices();
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<QuerySnapshot>.value(
-      value: DataBase().data,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text("In home"),
-          backgroundColor: Colors.green[600],
-          actions: [
-            FlatButton.icon(
-              icon: Icon(Icons.person),
-              onPressed: () async {
-                await _auth.signOut();
-              },
-              label: Text("Logout"),
-            ),
-          ],
-        ),
-        body: Center(
-          child: new Container(
-            child: Column(
-              children: <Widget>[
-                Image.asset(
-                  "assets/images/AlzheimersAwarenessRibbon.jpg",
-                  height: 210.0,
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Container(
-                  margin: EdgeInsets.all(25),
-                  child: FlatButton(
-                    child: Text(
-                      'Diagnose',
-                      style: TextStyle(fontSize: 20.0),
-                    ),
-                    color: Colors.blueAccent,
-                    textColor: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Diagnose()),
-                      );
-                    },
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(25),
-                  child: FlatButton(
-                    child: Text(
-                      'Care centres',
-                      style: TextStyle(fontSize: 20.0),
-                    ),
-                    color: Colors.blueAccent,
-                    textColor: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Carecentres()),
-                      );
-                    },
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(25),
-                  child: FlatButton(
-                    child: Text(
-                      'Know about Dementia',
-                      style: TextStyle(fontSize: 20.0),
-                    ),
-                    color: Colors.blueAccent,
-                    textColor: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Info()),
-                      );
-                    },
-                  ),
-                ),
-                
-              ],
-            ),
-          ),
-        ),
+
+    builddiagnose() {
+       return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: 30,
       ),
-    );
+      child: Column(
+        children: <Widget>[
+          Button1(
+            'Start Diagnosis',
+            'assets/icons/diagicon.png',
+            kCyanColor,
+          ),
+          SizedBox(
+            height: 20,
+          ),
+        ],
+      ),
+    );       
   }
-  
+
+  buildhosp() {
+       return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: 30,
+      ),
+      child: Column(
+        children: <Widget>[
+          Button2(
+            'Hospitals & Care Centres',
+            'assets/icons/hospicon.png',
+            kYellowColor,
+          ),
+          SizedBox(
+            height: 20,
+          ),
+        ],
+      ),
+    );       
+  }
+
+  buildknow() {
+       return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: 30,
+      ),
+      child: Column(
+        children: <Widget>[
+          Button3(
+            'What\'s Alzheimer\'s Disease?',
+            'assets/icons/knowicon.png',
+            kPinkColor,
+          ),
+          SizedBox(
+            height: 20,
+          ),
+        ],
+      ),
+    );       
+  }
+
+    return Scaffold(
+      backgroundColor: kBackgroundColor,
+      body : SafeArea(
+        bottom: false,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    SvgPicture.asset('assets/icons/menu.svg'),
+                    FlatButton.icon(
+                        icon: Icon(Icons.person),
+                        onPressed: () async {
+                          await _auth.signOut();
+                        },
+                        label: Text("Logout"),
+                      ),
+                    SvgPicture.asset('assets/icons/profile.svg'),
+                  ], 
+                ), 
+              ), 
+              SizedBox(
+                height: 20,
+              ),
+
+              Image.asset(
+                          "assets/images/ready.png",
+                        ),
+           
+              builddiagnose(),
+
+              SizedBox(
+                height: 20,
+              ),
+
+              Image.asset(
+                          "assets/images/hosp.png",
+                        ),
+           
+              buildhosp(),
+
+              SizedBox(
+                height: 20,
+              ),
+
+              Image.asset(
+                          "assets/images/know.png",
+                        ),
+
+              SizedBox(
+                height: 20,
+              ),
+           
+              buildknow(),
+
+            ]
+          )
+        )
+      )
+    ); 
+
+    
+      
+     
+  }
 }
