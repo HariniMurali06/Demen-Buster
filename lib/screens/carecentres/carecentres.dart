@@ -6,14 +6,13 @@ class Carecentres extends StatefulWidget {
 }
 
 class _CarecentresState extends State<Carecentres> {
-  
   final image = [
     'https://www.myfirstcollege.com/wp-content/uploads/2019/02/50856-teowvzsvpi-1486357354-1024x538.jpg', //1
     'https://cdn.telanganatoday.com/wp-content/uploads/2018/06/KIMS.jpg', //2
     'https://www.vaidam.com/sites/default/files/hospitals/blk_hospital.jpg', //3
     'https://avocure-uploads.s3.amazonaws.com/uploads/clinic/cover_pic_url/44/0.05775000_1461667459_malar.png', //4
     'https://www.nirujahealthtech.com/wp-content/uploads/2019/06/Gleneagles-Global-Hospitals.png', //5
-    'https://ahmedabad.apollohospitals.com/wp-content/uploads/2017/10/glry_g4_2013081239-864x607.jpg', //6
+    'https://www.apollohospitals.com/images/locations/apollo-ahmedabad.png', //6
     'https://photos.wikimapia.org/p/00/05/99/54/18_big.jpg', //7
     'https://www.manipalhospitals.com/uploads/timeline/TIMELINE_11.jpg', //8
     'https://s.ndtvimg.com/images/entities/300/medanta-the-medicity_636408318760267706_108167.jpg', //9
@@ -29,28 +28,27 @@ class _CarecentresState extends State<Carecentres> {
     'https://images.milaap.org/milaap/image/upload/v1515045832/production/images/campaign/26829/cf-0249_mbbpd6_1515045831.jpg?enhance=true&format=jpg&height=315&mode=fit&width=420', //19
     'https://ardsi.org/wp-content/uploads/2020/02/awareness-1024x1024.png', //20
   ];
-  final web=[
-    'https://www.aiims.edu/en.html',//1
-    'https://www.kimshospitals.com/',//2
-    'https://www.blkhospital.com/',//3
-    '',//4
-    '',//5
-    '',//6
-    '',//7
-    '',//8
-    '',//9
-    '',//10
-    '',//11
-    '',//12
-    '',//13
-    '',//14
-    '',//15
-    '',//!6
-    '',//17
-    '',//18
-    '',//19
-    '',//20
-
+  final web = [
+    'https://www.aiims.edu/en.html', //1
+    'https://www.kimshospitals.com/', //2
+    'https://www.blkhospital.com/', //3
+    '', //4
+    '', //5
+    '', //6
+    '', //7
+    '', //8
+    '', //9
+    '', //10
+    '', //11
+    '', //12
+    '', //13
+    '', //14
+    '', //15
+    '', //!6
+    '', //17
+    '', //18
+    '', //19
+    '', //20
   ];
   final name = [
     'ALL INDIA INSTITUTE OF MEDICAL SCIENCES, NEW DELHI', //1
@@ -80,7 +78,7 @@ class _CarecentresState extends State<Carecentres> {
     'Kims, Ambedkar Nagar, Nellore, Andhra Pradesh 524003',
     'BLK Super Speciality Hospital,  Pusa Road,  New Delhi-110005',
     'No. 52, 1st Main Rd, Gandhi Nagar, Adyar, Chennai, Tamil Nadu 600020',
-    '439, Embassy Residency Rd, Cheran Nagar, Perumbakkam,   Chennai, Tamil Nadu 600100',
+    '439, Embassy Residency Rd, Cheran Nagar, Perumbakkam,Chennai, Tamil Nadu 600100',
     'No. 134, Mint St, opposite Ramar Temple, Sowcarpet, Peddanaickenpet, George Town, Chennai, Tamil Nadu 600079',
     '4/112, Mount Poonamalle High Rd, Sathya Nagar, Manapakkam, Chennai, Tamil Nadu 600089',
     '98, HAL Old Airport Rd, Kodihalli, Bengaluru, Karnataka 560017',
@@ -92,9 +90,9 @@ class _CarecentresState extends State<Carecentres> {
     '8P6, 3rd A Cross Rd, Kasturinagar, Banasawadi, Bengaluru 560043, India',
     'Dignity Foundation 132, (Old No.52-A), AK Block, 7th Main Road, Anna Nagar, Chennai - 600040',
     'c/o Nightingales Medical Trust, 8P6, 3rd A Cross, Kasturinagar, Banaswadi, Bangalore 560043',
-    'Plot No. 8, 9,14,15, Rd Number 12, Sai Aishwarya Layout Khajaguda, Telangana 500089 Landmarks: Sai Baba Temple,beside Manikonda Cheruvu (lake)',
+    'Plot No. 8, 9,14,15, Rd Number 12, Sai Aishwarya Layout Khajaguda, Telangana 500089 ',
     'C–14 Qutab Institutional Area New Delhi - 110016',
-    'R/7a , North Main Road, Anna Nagar West Extension, Kailash Colony,Sector A, Anna Nagar West Extension, Chennai 600101, Tamil Nadu ,India',
+    'R/7a,North Main Road, Anna Nagar West Extension, Chennai 600101',
     'D89, 3rd Street, Anna Nagar East, Chennai 600 102'
   ];
 
@@ -122,16 +120,16 @@ class _CarecentresState extends State<Carecentres> {
   ];
 
   final type = [
-    'hospital',
-    'hospital',
-    'hospital',
-    'hospital',
-    'hospital',
-    'hospital',
-    'hospital',
-    'hospital',
-    'hospital',
-    'hospital',
+    'Hospital',
+    'Hospital',
+    'Hospital',
+    'Hospital',
+    'Hospital',
+    'Hospital',
+    'Hospital',
+    'Hospital',
+    'Hospital',
+    'Hospital',
     'Care Centre',
     'Care Centre',
     'Care Centre',
@@ -156,7 +154,7 @@ class _CarecentresState extends State<Carecentres> {
             },
           )
         ],
-        title: Text("Top CareCenters"),
+        title: Text("Hospitals and care centres"),
         backgroundColor: Colors.green[500],
         shadowColor: Colors.green[200],
         elevation: 50,

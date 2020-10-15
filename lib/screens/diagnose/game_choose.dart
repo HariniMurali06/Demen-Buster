@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:Demen_Buster/screens/diagnose/games/celebrity.dart';
 import 'package:Demen_Buster/screens/diagnose/games/simon.dart';
 import 'package:Demen_Buster/screens/diagnose/games/pattern1.dart';
