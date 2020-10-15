@@ -53,17 +53,6 @@ class _SignInState extends State<SignIn> {
                           "assets/images/logo.png",
                         ),
                         SizedBox(height: size.height * 0.03),
-
-                        // RoundedInputField(
-                        //   hintText: "Your Email",
-                        //   // validator: (val) => val.isEmpty ? "Enter an Email" : null,
-                        //   //         onChanged: (val) {
-                        //   //           setState(() => email = val);
-                        //   //         },
-                        // ),
-                        // RoundedPasswordField(
-                        //   onChanged: (value) {},
-                        // ),
                         Form(
                           key: _formKey,
                           child: Column(
