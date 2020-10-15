@@ -18,7 +18,6 @@ class Info extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
-                
                 elevation: 10,
                 borderOnForeground: false,
                 shadowColor: Colors.blue,

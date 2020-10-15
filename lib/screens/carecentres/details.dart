@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class Details extends StatelessWidget {
   Map data;
+  bool flag = true;
 
   @override
   Widget build(BuildContext context) {
     data = ModalRoute.of(context).settings.arguments;
+    try {
+      Image.network(data['image']);
+    } on NetworkImageLoadException {
+      print(flag);
+    } on Exception {
+      flag = false;
+    }
+    print(flag);
     return Scaffold(
       appBar: AppBar(title: Text(data['type']), backgroundColor: Colors.green),
       body: SingleChildScrollView(
@@ -20,9 +30,9 @@ class Details extends StatelessWidget {
                 child: Column(
                   children: [
                     Image.network(
-                      data['image'],
-                      fit: BoxFit.contain,
-                    ),
+                    data['image'],
+                    fit: BoxFit.contain,
+                  ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
@@ -47,17 +57,31 @@ class Details extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         FlatButton.icon(
-                          icon: Icon(Icons.phone),
+                          icon: Icon(
+                            Icons.phone, 
+                            color: Colors.blue),
                           label: Text("Call"),
                           onPressed: _launchURL,
                         ),
                         FlatButton.icon(
-                          icon: Icon(Icons.location_on),
+                          icon: Icon(
+                            Icons.location_on,
+                            color: Colors.red,
+                          ),
                           label: Text("Google Maps"),
                           onPressed: _launchMAP,
                         ),
                       ],
                     ),
+                    FlatButton.icon(
+                      icon: Icon(
+                        Icons.subtitles,
+                        color: Colors.black87,
+                      ),
+                      label: Text("Call"),
+                      onPressed: _launchWEB,
+                    ),
+                    SizedBox(height: 20),
                   ],
                 ),
               ),
@@ -66,6 +90,14 @@ class Details extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _launchWEB() async {
+    if (await canLaunch(data['web'])) {
+      await launch(data['web']);
+    } else {
+      throw 'Could not launch ${data['web']}';
+    }
   }
 
   _launchMAP() async {

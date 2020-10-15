@@ -6,6 +6,7 @@ class Carecentres extends StatefulWidget {
 }
 
 class _CarecentresState extends State<Carecentres> {
+  var count = 0;
   final image = [
     'https://www.myfirstcollege.com/wp-content/uploads/2019/02/50856-teowvzsvpi-1486357354-1024x538.jpg', //1
     'https://cdn.telanganatoday.com/wp-content/uploads/2018/06/KIMS.jpg', //2
@@ -29,27 +30,28 @@ class _CarecentresState extends State<Carecentres> {
     'https://ardsi.org/wp-content/uploads/2020/02/awareness-1024x1024.png', //20
   ];
   final web = [
-    'https://www.aiims.edu/en.html', //1
-    'https://www.kimshospitals.com/', //2
-    'https://www.blkhospital.com/', //3
-    '', //4
-    '', //5
-    '', //6
-    '', //7
-    '', //8
-    '', //9
-    '', //10
-    '', //11
-    '', //12
-    '', //13
-    '', //14
-    '', //15
-    '', //!6
-    '', //17
-    '', //18
-    '', //19
-    '', //20
+    "aiims.edu",//1
+    "kimshospitals.com",//2
+    "info@blkhospital.com",//3
+    "fortismalar.com",//4
+    "gleneaglesglobalhospitals.com",//5
+    "chennai.apollohospitals.com",//6
+    "miotinternational.com",//7
+    "manipalhospitals.com",//8
+    "medanta.org",//9
+    "artemishospitals.com",//10
+    "veecare.co.in",//11
+    "grandworldeldercare.com",//12
+    "anvayaa.com",//13
+    "nightingaleseldercare.com",//14
+    "dignityfoundation.com",//15
+    "dementiabangalore.in",//16
+    "kshetracare.in",//17
+    "helpageindia.org",//18
+    "dementiaindia.org",//19
+    "ardsi.org",//20
   ];
+
   final name = [
     'ALL INDIA INSTITUTE OF MEDICAL SCIENCES, NEW DELHI', //1
     'KIMS HOSPITAL', //2
@@ -148,22 +150,26 @@ class _CarecentresState extends State<Carecentres> {
       appBar: AppBar(
         actions: [
           IconButton(
+            color: Colors.black,
             icon: Icon(Icons.home),
             onPressed: () {
               Navigator.pushNamed(context, '/');
             },
           )
         ],
-        title: Text("Hospitals and care centres"),
-        backgroundColor: Colors.green[500],
-        shadowColor: Colors.green[200],
-        elevation: 50,
+        title: Text(
+          "Hospitals and care centres",
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        elevation: 0,
       ),
       body: GridView.count(
         crossAxisCount: 2,
         children: List.generate(address.length, (index) {
           return Card(
-            elevation: 20,
+            elevation: 0,
             child: Column(
               children: [
                 Expanded(
@@ -213,6 +219,7 @@ class _CarecentresState extends State<Carecentres> {
                             'type': type[index],
                             'number': number[index],
                             'image': image[index],
+                            'web' : web[index],
                           });
                         },
                       ),
