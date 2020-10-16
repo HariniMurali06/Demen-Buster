@@ -1,27 +1,26 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:Demen_Buster/model/score.dart';
 
-class DataBase {
+class DatabaseService {
   final String uid;
-  DataBase({this.uid});
+  DatabaseService({this.uid});
+  //ref to collection
+  final CollectionReference scoreCollection =
+      FirebaseFirestore.instance.collection("scores");
 
-  final CollectionReference userData =
-      FirebaseFirestore.instance.collection('scores');
-  Future updateUserData(int user_score, String date) async {
-    return await userData.doc(uid).set({
-      'Date': date,
-      'user_score': user_score,
+  //
+  Future updateUserData(String date, String score) async {
+    return await scoreCollection.doc(uid).set({
+      'date': date,
+      'score': score,
     });
   }
 
-  //score list
-  List<Score> _scoreList(QuerySnapshot snapshot) {
-    return snapshot.docs.map((doc) {
-      return Score(date: 'doc.user_data', user_score: 20);
-    });
+  Future addScore(String date, String score) async {
+    scoreCollection.add({date: date, score: score});
   }
 
-  Stream<QuerySnapshot> get score {
-    return userData.snapshots();
+  //get scorestreams
+  Stream<QuerySnapshot> get scores {
+    return scoreCollection.snapshots();
   }
 }

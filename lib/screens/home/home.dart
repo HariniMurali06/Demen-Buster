@@ -1,3 +1,4 @@
+import 'package:Demen_Buster/screens/home/scoreList.dart';
 import 'package:Demen_Buster/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:Demen_Buster/screens/diagnose/diagnose.dart';
@@ -8,7 +9,6 @@ import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:Demen_Buster/common/constants.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:Demen_Buster/screens/home/data_list.dart';
 import 'package:Demen_Buster/button/button1.dart';
 import 'package:Demen_Buster/button/button2.dart';
 import 'package:Demen_Buster/button/button3.dart';
@@ -78,7 +78,7 @@ class Home extends StatelessWidget {
     }
 
     return StreamProvider<QuerySnapshot>.value(
-      value: DataBase().score,
+      value: DatabaseService().scores,
       child: Scaffold(
           backgroundColor: kBackgroundColor,
           body: SafeArea(
@@ -87,7 +87,6 @@ class Home extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        DataList(),
                     Padding(
                       padding:
                           EdgeInsets.symmetric(horizontal: 30, vertical: 20),
