@@ -144,11 +144,9 @@ class _CarecentresState extends State<Carecentres> {
     'Care Centre'
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: Icon(Icons.arrow_back_ios,color: Colors.black),
@@ -162,72 +160,21 @@ class _CarecentresState extends State<Carecentres> {
           )
         ],
         title: Text(
-          "Hospitals and Care Centres",
+          "Hospitals and care centres",
           style: TextStyle(
             color: Colors.black,
           ),
         ),
         elevation: 0,
       ),
-      body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.all(20.0),
-          child: Column(
-            children: <Widget>[
-              Container(
-                width: double.infinity,
-                height: 250,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/hosp.png'),
-                    fit: BoxFit.cover
-                  )
-                ),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    gradient: LinearGradient(
-                      begin: Alignment.bottomRight,
-                      colors: [
-                        Colors.teal.withOpacity(.4),
-                        Colors.blue.withOpacity(.2),
-                      ]
-                    )
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    // children: <Widget>[
-                    //   Text("Lifestyle Sale", style: TextStyle(color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold),),
-                    //   SizedBox(height: 30,),
-                    //   Container(
-                    //     height: 50,
-                    //     margin: EdgeInsets.symmetric(horizontal: 40),
-                    //     decoration: BoxDecoration(
-                    //       borderRadius: BorderRadius.circular(10),
-                    //       color: Colors.white
-                    //     ),
-                    //     child: Center(child: Text("Shop Now", style: TextStyle(color: Colors.grey[900], fontWeight: FontWeight.bold),)),
-                    //   ),
-                    //   SizedBox(height: 30,),
-                    // ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 20,),
-              Expanded(
-                child: GridView.count(
+      body: GridView.count(
         crossAxisCount: 2,
-        crossAxisSpacing: 5,
-        mainAxisSpacing: 5,
         children: List.generate(address.length, (index) {
           return Card(
-            
             elevation: 0,
             child: Column(
               children: [
                 Expanded(
-                  
                   flex: 3,
                   child: Image.network(
                     image[index],
@@ -242,7 +189,7 @@ class _CarecentresState extends State<Carecentres> {
                   child: Text(
                     name[index],
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -285,11 +232,6 @@ class _CarecentresState extends State<Carecentres> {
             ),
           );
         }),
-      ),
-              )
-            ],
-          ),
-        ),
       ),
     );
   }
