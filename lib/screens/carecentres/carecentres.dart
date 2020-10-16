@@ -23,8 +23,8 @@ class _CarecentresState extends State<Carecentres> {
     'https://i.pinimg.com/originals/c9/bc/d3/c9bcd31a38ea9a122abd6d28a56373f6.jpg', //13
     'https://i.ytimg.com/vi/XnH0iTZX47U/hqdefault.jpg', //14
     'https://www.drsantoshshetty.com/wp-content/uploads/2018/08/Dignity-Foundation-to-Create-an-Awareness-on-Arthritis-Speaker-Dr-Santosh-Shetty-Mumbai-960x750.jpg', //15
-    'https://lh3.googleusercontent.com/proxy/Lfiky0nq6kysGNP3B25XEyFKwW60XnO0LqjlzbTlcy_bSlvig_SvgZt_n9PV4tt8y_VNiIDHOooeGmDbiyCrlKybd7X6M5r8_2bNitYilDcnP0TRsA', //16
-    'https://lh3.googleusercontent.com/proxy/2AUqqlwUBAYZkqx5DGyUryCu-dHAIR2dMQwfzHeo06XYlTLLKUKY7w4N4T0LzYZsxefrBLR8shwRAXdnfy7rxpJMQ-ZoTYRajAYw68CjHRQET8jC41fDJqqIIZpeZKdrDtTWESsOZUNteRoMCkQOmzQ3sNfMahs', //17
+    'https://ardsi.org/wp-content/uploads/2020/02/Untitled-design-2-1024x1024.png', //16
+    'https://media-exp1.licdn.com/dms/image/C560BAQEss9qc5WaN4Q/company-logo_200_200/0?e=2159024400&v=beta&t=6IcdSpNtZdXz7SBge9lAERkQaCIAJzrctbtH54A4ZcA', //17
     'https://secureservercdn.net/104.238.69.231/a22.d99.myftpupload.com/wp-content/uploads/2017/08/helpage-1.png', //18
     'https://images.milaap.org/milaap/image/upload/v1515045832/production/images/campaign/26829/cf-0249_mbbpd6_1515045831.jpg?enhance=true&format=jpg&height=315&mode=fit&width=420', //19
     'https://ardsi.org/wp-content/uploads/2020/02/awareness-1024x1024.png', //20
@@ -99,7 +99,7 @@ class _CarecentresState extends State<Carecentres> {
   ];
 
   final number = [
-    '9500852560',
+    '26588700',
     '08612315835',
     '+911130403040 ',
     '09962599933',

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Details extends StatelessWidget {
-  Map data;
+  Map user_data;
   bool flag = true;
 
   @override
   Widget build(BuildContext context) {
-    data = ModalRoute.of(context).settings.arguments;
+    user_data = ModalRoute.of(context).settings.arguments;
     try {
-      Image.network(data['image']);
+      Image.network(user_data['image']);
     } on NetworkImageLoadException {
       print(flag);
     } on Exception {
@@ -17,7 +17,8 @@ class Details extends StatelessWidget {
     }
     print(flag);
     return Scaffold(
-      appBar: AppBar(title: Text(data['type']), backgroundColor: Colors.green),
+      appBar:
+          AppBar(title: Text(user_data['type']), backgroundColor: Colors.green),
       body: SingleChildScrollView(
         child: Container(
           child: Padding(
@@ -29,13 +30,13 @@ class Details extends StatelessWidget {
                 child: Column(
                   children: [
                     Image.network(
-                      data['image'],
+                      user_data['image'],
                       fit: BoxFit.contain,
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        data['name'],
+                        user_data['name'],
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
@@ -45,7 +46,7 @@ class Details extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        data['address'],
+                        user_data['address'],
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 15,
@@ -90,28 +91,29 @@ class Details extends StatelessWidget {
   }
 
   _launchWEB() async {
-    print(data['web']);
-    if (await canLaunch(data['web'])) {
-      await launch(data['web']);
+    print(user_data['web']);
+    if (await canLaunch(user_data['web'])) {
+      await launch(user_data['web']);
     } else {
-      throw 'Could not launch ${data['web']}';
+      throw 'Could not launch ${user_data['web']}';
     }
   }
 
   _launchMAP() async {
     if (await canLaunch(
-        "https://www.google.co.in/maps/place/${data['address']}")) {
-      await launch("https://www.google.co.in/maps/place/${data['address']}");
+        "https://www.google.co.in/maps/place/${user_data['address']}")) {
+      await launch(
+          "https://www.google.co.in/maps/place/${user_data['address']}");
     } else {
-      throw 'Could not launch https://www.google.co.in/maps/place/${data['address']}';
+      throw 'Could not launch https://www.google.co.in/maps/place/${user_data['address']}';
     }
   }
 
   _launchURL() async {
-    if (await canLaunch("tel:${data['number']}")) {
-      await launch("tel:${data['number']}");
+    if (await canLaunch("tel:${user_data['number']}")) {
+      await launch("tel:${user_data['number']}");
     } else {
-      throw 'Could not launch tel:${data['number']}';
+      throw 'Could not launch tel:${user_data['number']}';
     }
   }
 }
