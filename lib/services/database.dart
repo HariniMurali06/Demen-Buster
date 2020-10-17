@@ -9,7 +9,7 @@ class DatabaseService {
 
   //
   Future updateUserData(String date, String score) async {
-        return await scoreCollection.doc(uid).collection("nestedScores").doc().set({
+        return await scoreCollection.doc(uid).collection("nestedScores").doc('_').set({
       'date': date,
       'score': score,
     });
