@@ -25,29 +25,46 @@ class NeuroDetails extends StatelessWidget {
                       _user_data['img'],
                       fit: BoxFit.contain,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        _user_data['name'],
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                    Row(
+                      children: [
+                        Text("Name ",style:TextStyle(color: Colors.blue[900],fontWeight: FontWeight.bold)),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            _user_data['name'],
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
                         ),
-                      ),
+                      ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        _user_data['education'],
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                        ),
+                       Column(
+                         children: [
+                           Container(
+                        child:Align(
+                          alignment: Alignment.centerLeft,
+                           child:Text("Education ",style:TextStyle(color: Colors.blue[900],fontWeight: FontWeight.bold)),
+                        )
+                           ),
+                           Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              _user_data['education'],
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                            ),
                       ),
-                    ),
+                         ],
+                       ),
+          
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
+                        Text("Call ",style:TextStyle(color: Colors.blue[900],fontWeight: FontWeight.bold)),
                         FlatButton.icon(
                           icon: Icon(Icons.phone, color: Colors.blue),
                           label: Text("Call"),
@@ -55,35 +72,60 @@ class NeuroDetails extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        _user_data['experience'],
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                    Row(
+                      children: [
+                        Text("Experience ",style:TextStyle(color: Colors.blue[900],fontWeight: FontWeight.bold)),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            _user_data['experience'],
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
                         ),
-                      ),
+                      ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        _user_data['hospital'],
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                    Column(
+                      children: [
+                        Container(
+                        child:Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text("Working hospital: ",style:TextStyle(color: Colors.blue[900],fontWeight: FontWeight.bold)),
                         ),
-                      ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            _user_data['hospital'],
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        _user_data['info'],
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                    Column(
+                      children: [
+                        Container(
+                        child:Align(
+                          alignment: Alignment.centerLeft,
+                          child:Text("Info: ",style:TextStyle(color: Colors.blue[900],fontWeight: FontWeight.bold)),
+                        )
                         ),
-                      ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            _user_data['info'],
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
