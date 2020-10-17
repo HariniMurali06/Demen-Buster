@@ -204,7 +204,6 @@ class _ResultState extends State<Result> {
                           ),
                   ),
                 ),
-                //adding user data
               ],
             ),
           ),

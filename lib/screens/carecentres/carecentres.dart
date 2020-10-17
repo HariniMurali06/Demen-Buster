@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Carecentres extends StatefulWidget {
-  @override
-  _CarecentresState createState() => _CarecentresState();
-}
-
-class _CarecentresState extends State<Carecentres> {
-  var count = 0;
-  final image = [
+  static List image = [
     'https://www.myfirstcollege.com/wp-content/uploads/2019/02/50856-teowvzsvpi-1486357354-1024x538.jpg', //1
     'https://cdn.telanganatoday.com/wp-content/uploads/2018/06/KIMS.jpg', //2
     'https://www.vaidam.com/sites/default/files/hospitals/blk_hospital.jpg', //3
@@ -29,7 +23,7 @@ class _CarecentresState extends State<Carecentres> {
     'https://images.milaap.org/milaap/image/upload/v1515045832/production/images/campaign/26829/cf-0249_mbbpd6_1515045831.jpg?enhance=true&format=jpg&height=315&mode=fit&width=420', //19
     'https://ardsi.org/wp-content/uploads/2020/02/awareness-1024x1024.png', //20
   ];
-  final web = [
+  static List web = [
     "https://www.aiims.edu", //1
     "https://www.kimshospitals.com", //2
     "https://www.info@blkhospital.com", //3
@@ -52,7 +46,7 @@ class _CarecentresState extends State<Carecentres> {
     "https://www.ardsi.org", //20
   ];
 
-  final name = [
+  static List name = [
     'ALL INDIA INSTITUTE OF MEDICAL SCIENCES, NEW DELHI', //1
     'KIMS HOSPITAL', //2
     'BLK SUPER SPECIALITY HOSPITAL', //3
@@ -75,7 +69,7 @@ class _CarecentresState extends State<Carecentres> {
     'ARDSI CHENNAI CHAPTER AND MADRAS MEMORY CLINIC' //20
   ];
 
-  final address = [
+  static List address = [
     'Sri Aurobindo Marg, Ansari Nagar, Ansari Nagar East, New Delhi, Delhi 110029',
     'Kims, Ambedkar Nagar, Nellore, Andhra Pradesh 524003',
     'BLK Super Speciality Hospital,  Pusa Road,  New Delhi-110005',
@@ -98,7 +92,7 @@ class _CarecentresState extends State<Carecentres> {
     'D89, 3rd Street, Anna Nagar East, Chennai 600 102'
   ];
 
-  final number = [
+  static List number = [
     '26588700',
     '08612315835',
     '+911130403040 ',
@@ -121,7 +115,7 @@ class _CarecentresState extends State<Carecentres> {
     '04442629209'
   ];
 
-  final type = [
+  static List type = [
     'Hospital',
     'Hospital',
     'Hospital',
@@ -143,7 +137,12 @@ class _CarecentresState extends State<Carecentres> {
     'Care Centre',
     'Care Centre'
   ];
+  @override
+  _CarecentresState createState() => _CarecentresState();
+}
 
+class _CarecentresState extends State<Carecentres> {
+  var count = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -202,7 +201,7 @@ class _CarecentresState extends State<Carecentres> {
                   crossAxisCount: 2,
                   crossAxisSpacing: 5,
                   mainAxisSpacing: 5,
-                  children: List.generate(address.length, (index) {
+                  children: List.generate(Carecentres.address.length, (index) {
                     return Card(
                       elevation: 0,
                       child: Column(
@@ -210,7 +209,7 @@ class _CarecentresState extends State<Carecentres> {
                           Expanded(
                             flex: 3,
                             child: Image.network(
-                              image[index],
+                              Carecentres.image[index],
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -220,7 +219,7 @@ class _CarecentresState extends State<Carecentres> {
                           Expanded(
                             flex: 2,
                             child: Text(
-                              name[index],
+                              Carecentres.name[index],
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
@@ -233,7 +232,7 @@ class _CarecentresState extends State<Carecentres> {
                           Expanded(
                             flex: 1,
                             child: Text(
-                              type[index],
+                              Carecentres.type[index],
                               style: TextStyle(
                                 fontSize: 10,
                                 fontWeight: FontWeight.bold,
@@ -250,12 +249,12 @@ class _CarecentresState extends State<Carecentres> {
                                   onPressed: () {
                                     Navigator.pushNamed(context, '/details',
                                         arguments: {
-                                          'address': address[index],
-                                          'name': name[index],
-                                          'type': type[index],
-                                          'number': number[index],
-                                          'image': image[index],
-                                          'web': web[index],
+                                          'address': Carecentres.address[index],
+                                          'name': Carecentres.name[index],
+                                          'type':Carecentres.type[index],
+                                          'number': Carecentres.number[index],
+                                          'image': Carecentres.image[index],
+                                          'web': Carecentres.web[index],
                                         });
                                   },
                                 ),
