@@ -1,3 +1,4 @@
+import 'package:Demen_Buster/screens/diagnose/personalquiz/personalquiz.dart';
 import 'package:flutter/material.dart';
 import 'package:Demen_Buster/screens/diagnose/game_choose.dart';
 import 'package:Demen_Buster/screens/diagnose/games/simon.dart';
@@ -96,8 +97,37 @@ class Diagnose extends StatelessWidget {
                       ),
                     ),
                   ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PersonalQuiz(),
+                        ),
+                      );
+                    },
+                    child: Card(
+                      color: Colors.lightBlueAccent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(27.0),
+                      ),
+                      margin: EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 25.0),
+                      child: ListTile(
+                        title: Text(
+                          "Make Personalized Quizzes",
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyText2
+                              .copyWith(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
+              
               SizedBox(height: MediaQuery.of(context).size.height * 0.04),
               Container(
                 height: MediaQuery.of(context).size.height * 0.4,

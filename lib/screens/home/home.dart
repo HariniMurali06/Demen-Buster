@@ -1,3 +1,5 @@
+import 'package:Demen_Buster/button/button4.dart';
+import 'package:Demen_Buster/button/button5.dart';
 import 'package:Demen_Buster/screens/home/scoreList.dart';
 import 'package:Demen_Buster/services/auth.dart';
 import 'package:flutter/material.dart';
@@ -77,6 +79,46 @@ class Home extends StatelessWidget {
       );
     }
 
+    buildprog() {
+      return Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: 30,
+        ),
+        child: Column(
+          children: <Widget>[
+            Button4(
+              'Know your Progress',
+              'assets/icons/progress.png',
+              kPinkColor,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
+      );
+    }
+
+    buildneuro() {
+      return Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: 30,
+        ),
+        child: Column(
+          children: <Widget>[
+            Button5(
+              'Consult Neurologists',
+              'assets/icons/neuro.png',
+              kCyanColor,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
         backgroundColor: kBackgroundColor,
         body: SafeArea(
@@ -85,18 +127,18 @@ class Home extends StatelessWidget {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                  FlatButton(
-                    child: Text("progress"),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/progress');
-                    },
-                  ),
-                  FlatButton(
-                    child: Text("Neurologist"),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/neurologist');
-                    },
-                  ),
+                  // FlatButton(
+                  //   child: Text("progress"),
+                  //   onPressed: () {
+                  //     Navigator.pushNamed(context, '/progress');
+                  //   },
+                  // ),
+                  // FlatButton(
+                  //   child: Text("Neurologist"),
+                  //   onPressed: () {
+                  //     Navigator.pushNamed(context, '/neurologist');
+                  //   },
+                  // ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                     child: Row(
@@ -124,10 +166,18 @@ class Home extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
+                  buildprog(),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Image.asset(
                     "assets/images/hosp.png",
                   ),
                   buildhosp(),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  buildneuro(),
                   SizedBox(
                     height: 20,
                   ),
