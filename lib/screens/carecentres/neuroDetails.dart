@@ -138,10 +138,10 @@ class NeuroDetails extends StatelessWidget {
   }
 
   _launchURL() async {
-    if (await canLaunch("tel:${_user_data['doc_number']}")) {
-      await launch("tel:${_user_data['doc_number']}");
+    if (await canLaunch("tel:${_user_data['number']}")) {
+      await launch("tel:${_user_data['number']}");
     } else {
-      throw 'Could not launch tel:${_user_data['doc_number']}';
+      throw 'Could not launch tel:${_user_data['number']}';
     }
   }
 }
