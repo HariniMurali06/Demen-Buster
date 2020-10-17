@@ -67,15 +67,15 @@ class Neurologist extends StatelessWidget {
   ];
 
   List doc_number = [
-    "0124-4141414",
+    "01244141414",
     "09899453074",
     "09990766036",
-    "1800 123 111 11",
+    "180012311111",
     "09958112045",
     "8080802665",
-    "1860 500 1066",
+    "18605001066",
     "-",
-    "022 2388 5469",
+    "02223885469",
     "-"
   ];
 
@@ -98,7 +98,7 @@ class Neurologist extends StatelessWidget {
       crossAxisCount: 2,
       crossAxisSpacing: 5,
       mainAxisSpacing: 5,
-      children: List.generate(doc_name.length, (index) {
+      children: List.generate(10, (index) {
         return Card(
           elevation: 0,
           child: Column(
