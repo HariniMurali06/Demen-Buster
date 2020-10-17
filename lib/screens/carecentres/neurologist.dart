@@ -98,7 +98,7 @@ class Neurologist extends StatelessWidget {
       crossAxisCount: 2,
       crossAxisSpacing: 5,
       mainAxisSpacing: 5,
-      children: List.generate(10, (index) {
+      children: List.generate(2, (index) {
         return Card(
           elevation: 0,
           child: Column(
