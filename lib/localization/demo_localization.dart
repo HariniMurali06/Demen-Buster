@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class DemoLocalization{
   final Locale locale;
@@ -18,7 +21,7 @@ class DemoLocalization{
 
     Map<String,dynamic> mappedJson= json.decode(jsonStringVaues);
 
-    _localizedValues= mappedJson.map(key,value) =>MapEntry(key,value);
+    _localizedValues= mappedJson.map(key ,value)=>MapEntry(key,value);
   }
   
   String getTranslatedValue(String key){
