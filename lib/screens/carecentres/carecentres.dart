@@ -30,26 +30,26 @@ class _CarecentresState extends State<Carecentres> {
     'https://ardsi.org/wp-content/uploads/2020/02/awareness-1024x1024.png', //20
   ];
   final web = [
-    "https://www.aiims.edu",//1
-    "https://www.kimshospitals.com",//2
-    "https://www.info@blkhospital.com",//3
-    "https://www.fortismalar.com",//4
-    "https://www.gleneaglesglobalhospitals.com",//5
-    "https://www.chennai.apollohospitals.com",//6
-    "https://www.miotinternational.com",//7
-    "https://www.manipalhospitals.com",//8
-    "https://www.medanta.org",//9
-    "https://www.artemishospitals.com",//10
-    "https://www.veecare.co.in",//11
-    "https://www.grandworldeldercare.com",//12
-    "https://www.anvayaa.com",//13
-    "https://www.nightingaleseldercare.com",//14
-    "https://www.dignityfoundation.com",//15
-    "https://www.dementiabangalore.in",//16
-    "https://www.kshetracare.in",//17
-    "https://www.helpageindia.org",//18
-    "https://www.dementiaindia.org",//19
-    "https://www.ardsi.org",//20
+    "https://www.aiims.edu", //1
+    "https://www.kimshospitals.com", //2
+    "https://www.info@blkhospital.com", //3
+    "https://www.fortismalar.com", //4
+    "https://www.gleneaglesglobalhospitals.com", //5
+    "https://www.chennai.apollohospitals.com", //6
+    "https://www.miotinternational.com", //7
+    "https://www.manipalhospitals.com", //8
+    "https://www.medanta.org", //9
+    "https://www.artemishospitals.com", //10
+    "https://www.veecare.co.in", //11
+    "https://www.grandworldeldercare.com", //12
+    "https://www.anvayaa.com", //13
+    "https://www.nightingaleseldercare.com", //14
+    "https://www.dignityfoundation.com", //15
+    "https://www.dementiabangalore.in", //16
+    "https://www.kshetracare.in", //17
+    "https://www.helpageindia.org", //18
+    "https://www.dementiaindia.org", //19
+    "https://www.ardsi.org", //20
   ];
 
   final name = [
@@ -144,14 +144,13 @@ class _CarecentresState extends State<Carecentres> {
     'Care Centre'
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        leading: Icon(Icons.arrow_back_ios,color: Colors.black),
+        leading: Icon(Icons.arrow_back_ios, color: Colors.black),
         actions: [
           IconButton(
             color: Colors.black,
@@ -178,101 +177,96 @@ class _CarecentresState extends State<Carecentres> {
                 width: double.infinity,
                 height: 250,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/hosp.png'),
-                    fit: BoxFit.cover
-                  )
-                ),
+                    borderRadius: BorderRadius.circular(20),
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/hosp.png'),
+                        fit: BoxFit.cover)),
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    gradient: LinearGradient(
-                      begin: Alignment.bottomRight,
-                      colors: [
+                      borderRadius: BorderRadius.circular(20),
+                      gradient:
+                          LinearGradient(begin: Alignment.bottomRight, colors: [
                         Colors.teal.withOpacity(.4),
                         Colors.blue.withOpacity(.2),
-                      ]
-                    )
-                  ),
+                      ])),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
-
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Expanded(
                 child: GridView.count(
-        crossAxisCount: 2,
-        crossAxisSpacing: 5,
-        mainAxisSpacing: 5,
-        children: List.generate(address.length, (index) {
-          return Card(
-            
-            elevation: 0,
-            child: Column(
-              children: [
-                Expanded(
-                  
-                  flex: 3,
-                  child: Image.network(
-                    image[index],
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Expanded(
-                  flex: 2,
-                  child: Text(
-                    name[index],
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Text(
-                    type[index],
-                    style: TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Row(
-                    children: [
-                      FlatButton.icon(
-                        label: Text("Details"),
-                        icon: Icon(Icons.info_outline),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/details', arguments: {
-                            'address': address[index],
-                            'name': name[index],
-                            'type': type[index],
-                            'number': number[index],
-                            'image': image[index],
-                            'web' : web[index],
-                          });
-                        },
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 5,
+                  mainAxisSpacing: 5,
+                  children: List.generate(address.length, (index) {
+                    return Card(
+                      elevation: 0,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            flex: 3,
+                            child: Image.network(
+                              image[index],
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: Text(
+                              name[index],
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: Text(
+                              type[index],
+                              style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: Row(
+                              children: [
+                                FlatButton.icon(
+                                  label: Text("Details"),
+                                  icon: Icon(Icons.info_outline),
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/details',
+                                        arguments: {
+                                          'address': address[index],
+                                          'name': name[index],
+                                          'type': type[index],
+                                          'number': number[index],
+                                          'image': image[index],
+                                          'web': web[index],
+                                        });
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    );
+                  }),
                 ),
-              ],
-            ),
-          );
-        }),
-      ),
               )
             ],
           ),

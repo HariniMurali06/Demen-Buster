@@ -1,9 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:Demen_Buster/screens/diagnose/diagnose.dart';
 import 'package:Demen_Buster/services/database.dart';
 import 'package:Demen_Buster/screens/carecentres/carecentres.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
+import 'package:Demen_Buster/services/auth.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Result extends StatefulWidget {
   final int simonLevel;
@@ -24,6 +28,11 @@ class Result extends StatefulWidget {
 class _ResultState extends State<Result> {
   final CollectionReference scoreCollection =
       FirebaseFirestore.instance.collection("scores");
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  String getUID() {
+    final User user = _auth.currentUser;
+    return user.uid;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +40,20 @@ class _ResultState extends State<Result> {
         (widget.simonLevel + widget.celebrityPoints + widget.patternPoints)
             .toString();
     final DateTime now = DateTime.now();
-    scoreCollection.add({'date':now.day.toString()+"/"+now.month.toString()+'/'+now.year.toString(),'score':total});
+    scoreCollection.doc(getUID()).collection("nestedScores").add({
+      'date': now.day.toString() +
+          "/" +
+          now.month.toString() +
+          '/' +
+          now.year.toString(),
+      'score': total
+    });
+    print(now.day.toString() +
+        "/" +
+        now.month.toString() +
+        '/' +
+        now.year.toString());
+    print(total);
     return Scaffold(
       body: Stack(
         children: <Widget>[

@@ -9,15 +9,13 @@ class DatabaseService {
 
   //
   Future updateUserData(String date, String score) async {
-    return await scoreCollection.doc(uid).set({
+        return await scoreCollection.doc(uid).collection("nestedScores").doc().set({
       'date': date,
       'score': score,
     });
   }
 
-  Future addScore(String date, String score) async {
-    scoreCollection.add({date: date, score: score});
-  }
+  
 
   //get scorestreams
   Stream<QuerySnapshot> get scores {

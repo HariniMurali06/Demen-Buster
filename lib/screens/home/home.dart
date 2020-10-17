@@ -77,59 +77,67 @@ class Home extends StatelessWidget {
       );
     }
 
-    return StreamProvider<QuerySnapshot>.value(
-      value: DatabaseService().scores,
-      child: Scaffold(
-          backgroundColor: kBackgroundColor,
-          body: SafeArea(
-              bottom: false,
-              child: SingleChildScrollView(
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+    return Scaffold(
+        backgroundColor: kBackgroundColor,
+        body: SafeArea(
+            bottom: false,
+            child: SingleChildScrollView(
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                  FlatButton(
+                    child: Text("progress"),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/progress');
+                    },
+                  ),
+                  FlatButton(
+                    child: Text("Neurologist"),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/neurologist');
+                    },
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                    Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          SvgPicture.asset('assets/icons/menu.svg'),
-                          FlatButton.icon(
-                            icon: Icon(Icons.person),
-                            onPressed: () async {
-                              await _auth.signOut();
-                            },
-                            label: Text("Logout"),
-                          ),
-                          SvgPicture.asset('assets/icons/profile.svg'),
-                        ],
-                      ),
+                        SvgPicture.asset('assets/icons/menu.svg'),
+                        FlatButton.icon(
+                          icon: Icon(Icons.person),
+                          onPressed: () async {
+                            await _auth.signOut();
+                          },
+                          label: Text("Logout"),
+                        ),
+                        SvgPicture.asset('assets/icons/profile.svg'),
+                      ],
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Image.asset(
-                      "assets/images/ready.png",
-                    ),
-                    builddiagnose(),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Image.asset(
-                      "assets/images/hosp.png",
-                    ),
-                    buildhosp(),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Image.asset(
-                      "assets/images/know.png",
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    buildknow(),
-                  ])))),
-    );
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Image.asset(
+                    "assets/images/ready.png",
+                  ),
+                  builddiagnose(),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Image.asset(
+                    "assets/images/hosp.png",
+                  ),
+                  buildhosp(),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Image.asset(
+                    "assets/images/know.png",
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  buildknow(),
+                ]))));
   }
 }
