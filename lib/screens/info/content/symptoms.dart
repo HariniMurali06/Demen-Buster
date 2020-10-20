@@ -24,7 +24,7 @@ class Symptoms extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        elevation: 0,
+        elevation: 0, 
       ),
         body: SingleChildScrollView(
         child: Column(

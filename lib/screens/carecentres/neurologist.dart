@@ -94,80 +94,138 @@ class Neurologist extends StatelessWidget {
   Map _user_data;
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 2,
-      crossAxisSpacing: 5,
-      mainAxisSpacing: 5,
-      children: List.generate(
-        doc_name.length,
-        (index) {
-          return Card(
-            elevation: 0,
-            child: Column(
-              children: [
-                Expanded(
-                  flex: 3,
-                  child: Image.network(
-                    doc_img[index],
-                    fit: BoxFit.contain,
+    return Scaffold(
+      backgroundColor: Colors.grey[200],
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: Icon(Icons.arrow_back_ios, color: Colors.black),
+        actions: [
+          IconButton(
+            color: Colors.black,
+            icon: Icon(Icons.home),
+            onPressed: () {
+              Navigator.pushNamed(context, '/');
+            },
+          )
+        ],
+        title: Text(
+          "Top Neurologists",
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        elevation: 0,
+      ),
+      body: SafeArea(
+        child: Container(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+            children: <Widget>[
+              Container(
+                width: double.infinity,
+                height: 250,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/neuro.png'),
+                        fit: BoxFit.cover)),
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient:
+                          LinearGradient(begin: Alignment.bottomRight, colors: [
+                        Colors.white.withOpacity(.4),
+                        Colors.blue.withOpacity(.2),
+                      ])),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
                   ),
                 ),
-                SizedBox(
-                  height: 5,
-                ),
-                Expanded(
-                  flex: 2,
-                  child: Text(
-                    doc_name[index],
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Expanded(
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 5,
+                  mainAxisSpacing: 5,
+                  children: List.generate( 
+                    doc_name.length,
+                    (index) {
+                      return Card(
+                        elevation: 0,
+                        child: Column(
+                          children: [
+                            Expanded(
+                              flex: 3,
+                              child: Image.network(
+                                doc_img[index],
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Expanded(
+                              flex: 2,
+                              child: Text(
+                                doc_name[index],
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Text(
+                                doc_experience[index],
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Row(
+                                children: [
+                                  FlatButton.icon(
+                                    label: Text("Details"),
+                                    icon: Icon(Icons.info_outline),
+                                    onPressed: () {
+                                      Navigator.pushNamed(
+                                        context,
+                                        '/neurodetails',
+                                        arguments: {
+                                          'name': doc_name[index],
+                                          'img': doc_img[index],
+                                          'experience': doc_experience[index],
+                                          'number': doc_number[index],
+                                          'education': doc_education[index],
+                                          'hospital': doc_hospital[index],
+                                          'info': doc_info[index],
+                                        },
+                                      );
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
                   ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Text(
-                    doc_experience[index],
-                    style: TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Row(
-                    children: [
-                      FlatButton.icon(
-                        label: Text("Details"),
-                        icon: Icon(Icons.info_outline),
-                        onPressed: () {
-                          Navigator.pushNamed(
-                            context,
-                            '/neurodetails',
-                            arguments: {
-                              'name': doc_name[index],
-                              'img': doc_img[index],
-                              'experience': doc_experience[index],
-                              'number': doc_number[index],
-                              'education': doc_education[index],
-                              'hospital': doc_hospital[index],
-                              'info': doc_info[index],
-                            },
-                          );
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
+                )
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
