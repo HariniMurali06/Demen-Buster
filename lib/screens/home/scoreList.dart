@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
-import 'package:Demen_Buster/services/database.dart';
+
 
 class ScoreList extends StatefulWidget {
   @override
