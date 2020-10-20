@@ -1,14 +1,14 @@
 import 'package:Demen_Buster/constants.dart';
-import 'package:Demen_Buster/screens/carecentres/neurologist.dart';
-import 'package:Demen_Buster/screens/info/info.dart';
+import 'package:Demen_Buster/screens/diagnose/diagnose.dart';
 import 'package:flutter/material.dart';
 
-class Button5 extends StatelessWidget {
+class Button extends StatelessWidget {
   var _name;
   var _imageUrl;
   var _bgColor;
+  var _route;
 
-  Button5(this._name, this._imageUrl, this._bgColor);
+  Button(this._name, this._imageUrl, this._bgColor, this._route);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class Button5 extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => Neurologist(),
+            builder: (context) => _route,
           ),
         );
       },

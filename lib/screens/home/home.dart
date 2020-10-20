@@ -1,12 +1,14 @@
-import 'package:Demen_Buster/button/button4.dart';
-import 'package:Demen_Buster/button/button5.dart';
-import 'package:Demen_Buster/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:Demen_Buster/constants.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:Demen_Buster/button/button1.dart';
-import 'package:Demen_Buster/button/button2.dart';
-import 'package:Demen_Buster/button/button3.dart';
+import 'package:Demen_Buster/screens/home/button.dart';
+import 'package:Demen_Buster/screens/carecentres/carecentres.dart';
+import 'package:Demen_Buster/screens/carecentres/neurologist.dart';
+import 'package:Demen_Buster/screens/diagnose/diagnose.dart';
+import 'package:Demen_Buster/screens/info/info.dart';
+import 'package:Demen_Buster/screens/progress.dart';
+import 'package:Demen_Buster/services/auth.dart';
+
 
 class Home extends StatelessWidget {
   final AuthServices _auth = AuthServices();
@@ -19,10 +21,11 @@ class Home extends StatelessWidget {
           ),
           child: Column(
           children: <Widget>[
-            Button1(
+            Button(
             'Start Diagnosis',
             'assets/icons/diagicon.png',
             kCyanColor,
+            Diagnose()
             ),
             SizedBox(
             height: 20,
@@ -39,10 +42,11 @@ class Home extends StatelessWidget {
         ),
         child: Column(
           children: <Widget>[
-            Button2(
+            Button(
             'Hospitals & Care Centres',
             'assets/icons/hospicon.png',
             kYellowColor,
+            Carecentres()
             ),
             SizedBox(
             height: 20,
@@ -59,10 +63,11 @@ class Home extends StatelessWidget {
         ),
         child: Column(
           children: <Widget>[
-            Button3(
+            Button(
             'What\'s Alzheimer\'s Disease?',
             'assets/icons/knowicon.png',
             kPinkColor,
+            Info()
             ),
             SizedBox(
             height: 20,
@@ -79,10 +84,11 @@ class Home extends StatelessWidget {
         ),
         child: Column(
           children: <Widget>[
-            Button4(
+            Button(
             'Know your Progress',
             'assets/icons/progress.png',
             kPinkColor,
+            Progress()
             ),
             SizedBox(
             height: 20,
@@ -99,10 +105,11 @@ class Home extends StatelessWidget {
         ),
         child: Column(
           children: <Widget>[
-            Button5(
+            Button(
             'Consult Neurologists',
             'assets/icons/neuro.png',
             kCyanColor,
+            Neurologist()
             ),
             SizedBox(
             height: 20,
