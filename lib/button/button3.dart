@@ -1,4 +1,4 @@
-import 'package:Demen_Buster/common/constants.dart';
+import 'package:Demen_Buster/constants.dart';
 import 'package:Demen_Buster/screens/info/info.dart';
 import 'package:flutter/material.dart';
 

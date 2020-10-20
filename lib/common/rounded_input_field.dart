@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:Demen_Buster/common/text_field_container.dart';
-import 'package:Demen_Buster/common/constants.dart';
+import 'package:Demen_Buster/constants.dart';
 
 class RoundedInputField extends StatelessWidget {
   final String hintText;

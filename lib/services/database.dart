@@ -7,7 +7,7 @@ class DatabaseService {
   final CollectionReference scoreCollection =
       FirebaseFirestore.instance.collection("scores");
 
-  //
+
   Future updateUserData(String date, String score) async {
         return await scoreCollection.doc(uid).collection("nestedScores").doc('_').set({
       'date': date,

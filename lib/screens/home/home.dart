@@ -1,15 +1,8 @@
 import 'package:Demen_Buster/button/button4.dart';
 import 'package:Demen_Buster/button/button5.dart';
-import 'package:Demen_Buster/screens/home/scoreList.dart';
 import 'package:Demen_Buster/services/auth.dart';
 import 'package:flutter/material.dart';
-import 'package:Demen_Buster/screens/diagnose/diagnose.dart';
-import 'package:Demen_Buster/screens/carecentres/carecentres.dart';
-import 'package:Demen_Buster/screens/info/info.dart';
-import 'package:Demen_Buster/services/database.dart';
-import 'package:provider/provider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:Demen_Buster/common/constants.dart';
+import 'package:Demen_Buster/constants.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:Demen_Buster/button/button1.dart';
 import 'package:Demen_Buster/button/button2.dart';
@@ -23,16 +16,16 @@ class Home extends StatelessWidget {
       return Padding(
         padding: EdgeInsets.symmetric(
           horizontal: 30,
-        ),
-        child: Column(
+          ),
+          child: Column(
           children: <Widget>[
             Button1(
-              'Start Diagnosis',
-              'assets/icons/diagicon.png',
-              kCyanColor,
+            'Start Diagnosis',
+            'assets/icons/diagicon.png',
+            kCyanColor,
             ),
             SizedBox(
-              height: 20,
+            height: 20,
             ),
           ],
         ),
@@ -41,18 +34,18 @@ class Home extends StatelessWidget {
 
     buildhosp() {
       return Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 30,
+      padding: EdgeInsets.symmetric(
+        horizontal: 30,
         ),
         child: Column(
           children: <Widget>[
             Button2(
-              'Hospitals & Care Centres',
-              'assets/icons/hospicon.png',
-              kYellowColor,
+            'Hospitals & Care Centres',
+            'assets/icons/hospicon.png',
+            kYellowColor,
             ),
             SizedBox(
-              height: 20,
+            height: 20,
             ),
           ],
         ),
@@ -61,18 +54,18 @@ class Home extends StatelessWidget {
 
     buildknow() {
       return Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 30,
+      padding: EdgeInsets.symmetric(
+        horizontal: 30,
         ),
         child: Column(
           children: <Widget>[
             Button3(
-              'What\'s Alzheimer\'s Disease?',
-              'assets/icons/knowicon.png',
-              kPinkColor,
+            'What\'s Alzheimer\'s Disease?',
+            'assets/icons/knowicon.png',
+            kPinkColor,
             ),
             SizedBox(
-              height: 20,
+            height: 20,
             ),
           ],
         ),
@@ -82,17 +75,17 @@ class Home extends StatelessWidget {
     buildprog() {
       return Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: 30,
+        horizontal: 30,
         ),
         child: Column(
           children: <Widget>[
             Button4(
-              'Know your Progress',
-              'assets/icons/progress.png',
-              kPinkColor,
+            'Know your Progress',
+            'assets/icons/progress.png',
+            kPinkColor,
             ),
             SizedBox(
-              height: 20,
+            height: 20,
             ),
           ],
         ),
@@ -100,19 +93,19 @@ class Home extends StatelessWidget {
     }
 
     buildneuro() {
-      return Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 30,
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: 30,
         ),
         child: Column(
           children: <Widget>[
             Button5(
-              'Consult Neurologists',
-              'assets/icons/neuro.png',
-              kCyanColor,
+            'Consult Neurologists',
+            'assets/icons/neuro.png',
+            kCyanColor,
             ),
             SizedBox(
-              height: 20,
+            height: 20,
             ),
           ],
         ),
@@ -120,74 +113,66 @@ class Home extends StatelessWidget {
     }
 
     return Scaffold(
-        backgroundColor: kBackgroundColor,
-        body: SafeArea(
-            bottom: false,
-            child: SingleChildScrollView(
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                  // FlatButton(
-                  //   child: Text("progress"),
-                  //   onPressed: () {
-                  //     Navigator.pushNamed(context, '/progress');
-                  //   },
-                  // ),
-                  // FlatButton(
-                  //   child: Text("Neurologist"),
-                  //   onPressed: () {
-                  //     Navigator.pushNamed(context, '/neurologist');
-                  //   },
-                  // ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        SvgPicture.asset('assets/icons/menu.svg'),
-                        FlatButton.icon(
-                          icon: Icon(Icons.person),
-                          onPressed: () async {
-                            await _auth.signOut();
-                          },
-                          label: Text("Logout"),
-                        ),
-                        SvgPicture.asset('assets/icons/profile.svg'),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Image.asset(
-                    "assets/images/ready.png",
-                  ),
-                  builddiagnose(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  buildprog(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Image.asset(
-                    "assets/images/hosp.png",
-                  ),
-                  buildhosp(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  buildneuro(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Image.asset(
-                    "assets/images/know.png",
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  buildknow(),
-                ]))));
+    backgroundColor: kBackgroundColor,
+    body: SafeArea(
+      bottom: false,
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+              child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                SvgPicture.asset('assets/icons/menu.svg'),
+                FlatButton.icon(
+                  icon: Icon(Icons.person),
+                  onPressed: () async {
+                    await _auth.signOut();
+                  },
+                  label: Text("Logout"),
+                ),
+                SvgPicture.asset('assets/icons/profile.svg'),
+                ],
+              ),
+            ),
+            SizedBox(
+            height: 20,
+            ),
+            Image.asset(
+            "assets/images/ready.png",
+            ),
+            builddiagnose(),
+            SizedBox(
+            height: 20,
+            ),
+            buildprog(),
+            SizedBox(
+            height: 20,
+            ),
+            Image.asset(
+            "assets/images/hosp.png",
+            ),
+            buildhosp(),
+            SizedBox(
+            height: 20,
+            ),
+            buildneuro(),
+            SizedBox(
+            height: 20,
+            ),
+            Image.asset(
+            "assets/images/know.png",
+            ),
+            SizedBox(
+            height: 20,
+            ),
+            buildknow(),
+            ]
+          )
+        )
+      )
+    );
   }
 }

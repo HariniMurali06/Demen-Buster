@@ -1,7 +1,7 @@
-import 'package:Demen_Buster/common/constants.dart';
+import 'package:Demen_Buster/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:Demen_Buster/common/constants.dart';
+import 'package:Demen_Buster/constants.dart';
 import 'package:Demen_Buster/screens/info/content/about.dart';
 import 'package:Demen_Buster/screens/info/content/symptoms.dart';
 import 'package:Demen_Buster/screens/info/content/memory.dart';

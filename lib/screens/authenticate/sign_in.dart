@@ -1,8 +1,8 @@
-import 'package:Demen_Buster/common/constants.dart';
+import 'package:Demen_Buster/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:Demen_Buster/services/auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:Demen_Buster/common/loading.dart';
+import 'package:Demen_Buster/loading.dart';
 import 'package:Demen_Buster/common/rounded_button.dart';
 import 'package:Demen_Buster/common/rounded_input_field.dart';
 import 'package:Demen_Buster/common/rounded_password_field.dart';
